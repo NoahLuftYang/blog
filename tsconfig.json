@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "noEmit": true,
+    "paths": {
+      "@app/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}
