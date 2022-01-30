@@ -16,25 +16,22 @@ interface Props {
   };
 }
 
-export const StoryPage = ({ story: { content, publishedAt, seo, title } }: Props) => {
+export function StoryPage({ story: { content, publishedAt, seo, title } }: Props) {
   return (
     <Layout>
-      <SEO
-        title={title}
-        openGraph={seo?.image?.url != null ? { images: [{ url: seo.image.url }] } : undefined}
-      />
+      <SEO openGraph={seo?.image?.url == null ? undefined : { images: [{ url: seo.image.url }] }} title={title} />
       <Container
         css={css`
           margin-top: ${Header.HEIGHT}px;
-          padding: 0 64px;
+          padding: 32px 64px 100px;
         `}
         maxWidth="container.lg"
       >
         <Grid templateColumns="repeat(12, 1fr)">
           <GridItem
             as="article"
-            colStart={3}
             colEnd={11}
+            colStart={3}
             css={css`
               & > * ~ * {
                 margin-top: 32px;
@@ -42,7 +39,7 @@ export const StoryPage = ({ story: { content, publishedAt, seo, title } }: Props
             `}
           >
             <Heading as="h1">{title}</Heading>
-            <Flex as={Date} justify="flex-end" isoDate={publishedAt} />
+            <Flex as={Date} isoDate={publishedAt} justify="flex-end" />
             <Content content={content} />
             <Comments />
           </GridItem>
@@ -50,4 +47,4 @@ export const StoryPage = ({ story: { content, publishedAt, seo, title } }: Props
       </Container>
     </Layout>
   );
-};
+}

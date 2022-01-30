@@ -10,23 +10,23 @@ interface Props {
   stories: StoriesQueryResponse['stories'];
 }
 
-export const HomePage = ({ stories }: Props) => {
+export function HomePage({ stories }: Props) {
   return (
     <Layout>
       <Container
         as="main"
         css={css`
           margin-top: ${Header.HEIGHT}px;
-          padding: 0 64px;
+          padding: 32px 64px 100px;
         `}
         maxWidth="container.lg"
       >
         <Grid templateColumns="repeat(12, 1fr)">
-          <GridItem colStart={3} colEnd={11}>
+          <GridItem colEnd={11} colStart={3}>
             <StoryList stories={stories} />
           </GridItem>
         </Grid>
       </Container>
     </Layout>
   );
-};
+}

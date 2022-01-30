@@ -9,7 +9,7 @@ interface Props {
   stories: StoriesQueryResponse['stories'];
 }
 
-export const StoryList = ({ stories }: Props) => {
+export function StoryList({ stories }: Props) {
   if (stories.length === 0) {
     return <p>게시글이 없습니다.</p>;
   }
@@ -23,11 +23,11 @@ export const StoryList = ({ stories }: Props) => {
         margin: 0;
         padding: 0;
       `}
-      spacing={32}
+      spacing="32px"
     >
       {stories.map(({ excerpt, publishedAt, slug, title }) => {
         return (
-          <VStack align="stretch" as="li" spacing={4} key={slug}>
+          <VStack align="stretch" as="li" key={slug} spacing={4}>
             <Anchor href={`/story/${slug}`}>
               <Text fontSize="3xl">{title}</Text>
               <Date isoDate={publishedAt as string} />
@@ -38,4 +38,4 @@ export const StoryList = ({ stories }: Props) => {
       })}
     </VStack>
   );
-};
+}

@@ -609,194 +609,186 @@ query StoriesQuery(
 }
 */
 
-const node: ConcreteRequest = (function(){
-var v0 = [
-  {
-    "defaultValue": null,
-    "kind": "LocalArgument",
-    "name": "where"
-  }
-],
-v1 = [
-  {
-    "kind": "Literal",
-    "name": "first",
-    "value": 10
-  },
-  {
-    "kind": "Literal",
-    "name": "orderBy",
-    "value": "publishedAt_DESC"
-  },
-  {
-    "kind": "Literal",
-    "name": "stage",
-    "value": "PUBLISHED"
-  },
-  {
-    "kind": "Variable",
-    "name": "where",
-    "variableName": "where"
-  }
-],
-v2 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "title",
-  "storageKey": null
-},
-v3 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "slug",
-  "storageKey": null
-},
-v4 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "publishedAt",
-  "storageKey": null
-},
-v5 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "url",
-  "storageKey": null
-},
-v6 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "name",
-  "storageKey": null
-},
-v7 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "excerpt",
-  "storageKey": null
-},
-v8 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "id",
-  "storageKey": null
-};
-return {
-  "fragment": {
-    "argumentDefinitions": (v0/*: any*/),
-    "kind": "Fragment",
-    "metadata": null,
-    "name": "StoriesQuery",
-    "selections": [
-      {
+const node: ConcreteRequest = (function () {
+    var v0 = [
+        {
+            "defaultValue": null,
+            "kind": "LocalArgument",
+            "name": "where"
+        } as any
+    ], v1 = [
+        {
+            "kind": "Literal",
+            "name": "first",
+            "value": 10
+        } as any,
+        {
+            "kind": "Literal",
+            "name": "orderBy",
+            "value": "publishedAt_DESC"
+        } as any,
+        {
+            "kind": "Literal",
+            "name": "stage",
+            "value": "PUBLISHED"
+        } as any,
+        {
+            "kind": "Variable",
+            "name": "where",
+            "variableName": "where"
+        } as any
+    ], v2 = {
         "alias": null,
-        "args": (v1/*: any*/),
-        "concreteType": "Story",
-        "kind": "LinkedField",
-        "name": "stories",
-        "plural": true,
-        "selections": [
-          (v2/*: any*/),
-          (v3/*: any*/),
-          (v4/*: any*/),
-          {
-            "alias": null,
-            "args": null,
-            "concreteType": "Asset",
-            "kind": "LinkedField",
-            "name": "coverImage",
-            "plural": false,
-            "selections": [
-              (v5/*: any*/)
-            ],
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "concreteType": "Category",
-            "kind": "LinkedField",
-            "name": "category",
-            "plural": false,
-            "selections": [
-              (v6/*: any*/)
-            ],
-            "storageKey": null
-          },
-          (v7/*: any*/)
-        ],
+        "args": null,
+        "kind": "ScalarField",
+        "name": "title",
         "storageKey": null
-      }
-    ],
-    "type": "Query",
-    "abstractKey": null
-  },
-  "kind": "Request",
-  "operation": {
-    "argumentDefinitions": (v0/*: any*/),
-    "kind": "Operation",
-    "name": "StoriesQuery",
-    "selections": [
-      {
+    } as any, v3 = {
         "alias": null,
-        "args": (v1/*: any*/),
-        "concreteType": "Story",
-        "kind": "LinkedField",
-        "name": "stories",
-        "plural": true,
-        "selections": [
-          (v2/*: any*/),
-          (v3/*: any*/),
-          (v4/*: any*/),
-          {
-            "alias": null,
-            "args": null,
-            "concreteType": "Asset",
-            "kind": "LinkedField",
-            "name": "coverImage",
-            "plural": false,
-            "selections": [
-              (v5/*: any*/),
-              (v8/*: any*/)
-            ],
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "concreteType": "Category",
-            "kind": "LinkedField",
-            "name": "category",
-            "plural": false,
-            "selections": [
-              (v6/*: any*/),
-              (v8/*: any*/)
-            ],
-            "storageKey": null
-          },
-          (v7/*: any*/),
-          (v8/*: any*/)
-        ],
+        "args": null,
+        "kind": "ScalarField",
+        "name": "slug",
         "storageKey": null
-      }
-    ]
-  },
-  "params": {
-    "cacheID": "2ea0900dd9e1a0f9a3175c2c48dd4adf",
-    "id": null,
-    "metadata": {},
-    "name": "StoriesQuery",
-    "operationKind": "query",
-    "text": "query StoriesQuery(\n  $where: StoryWhereInput\n) {\n  stories(first: 10, orderBy: publishedAt_DESC, stage: PUBLISHED, where: $where) {\n    title\n    slug\n    publishedAt\n    coverImage {\n      url\n      id\n    }\n    category {\n      name\n      id\n    }\n    excerpt\n    id\n  }\n}\n"
-  }
-};
+    } as any, v4 = {
+        "alias": null,
+        "args": null,
+        "kind": "ScalarField",
+        "name": "publishedAt",
+        "storageKey": null
+    } as any, v5 = {
+        "alias": null,
+        "args": null,
+        "kind": "ScalarField",
+        "name": "url",
+        "storageKey": null
+    } as any, v6 = {
+        "alias": null,
+        "args": null,
+        "kind": "ScalarField",
+        "name": "name",
+        "storageKey": null
+    } as any, v7 = {
+        "alias": null,
+        "args": null,
+        "kind": "ScalarField",
+        "name": "excerpt",
+        "storageKey": null
+    } as any, v8 = {
+        "alias": null,
+        "args": null,
+        "kind": "ScalarField",
+        "name": "id",
+        "storageKey": null
+    } as any;
+    return {
+        "fragment": {
+            "argumentDefinitions": (v0 /*: any*/),
+            "kind": "Fragment",
+            "metadata": null,
+            "name": "StoriesQuery",
+            "selections": [
+                {
+                    "alias": null,
+                    "args": (v1 /*: any*/),
+                    "concreteType": "Story",
+                    "kind": "LinkedField",
+                    "name": "stories",
+                    "plural": true,
+                    "selections": [
+                        (v2 /*: any*/),
+                        (v3 /*: any*/),
+                        (v4 /*: any*/),
+                        {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "Asset",
+                            "kind": "LinkedField",
+                            "name": "coverImage",
+                            "plural": false,
+                            "selections": [
+                                (v5 /*: any*/)
+                            ],
+                            "storageKey": null
+                        },
+                        {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "Category",
+                            "kind": "LinkedField",
+                            "name": "category",
+                            "plural": false,
+                            "selections": [
+                                (v6 /*: any*/)
+                            ],
+                            "storageKey": null
+                        },
+                        (v7 /*: any*/)
+                    ],
+                    "storageKey": null
+                }
+            ],
+            "type": "Query",
+            "abstractKey": null
+        },
+        "kind": "Request",
+        "operation": {
+            "argumentDefinitions": (v0 /*: any*/),
+            "kind": "Operation",
+            "name": "StoriesQuery",
+            "selections": [
+                {
+                    "alias": null,
+                    "args": (v1 /*: any*/),
+                    "concreteType": "Story",
+                    "kind": "LinkedField",
+                    "name": "stories",
+                    "plural": true,
+                    "selections": [
+                        (v2 /*: any*/),
+                        (v3 /*: any*/),
+                        (v4 /*: any*/),
+                        {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "Asset",
+                            "kind": "LinkedField",
+                            "name": "coverImage",
+                            "plural": false,
+                            "selections": [
+                                (v5 /*: any*/),
+                                (v8 /*: any*/)
+                            ],
+                            "storageKey": null
+                        },
+                        {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "Category",
+                            "kind": "LinkedField",
+                            "name": "category",
+                            "plural": false,
+                            "selections": [
+                                (v6 /*: any*/),
+                                (v8 /*: any*/)
+                            ],
+                            "storageKey": null
+                        },
+                        (v7 /*: any*/),
+                        (v8 /*: any*/)
+                    ],
+                    "storageKey": null
+                }
+            ]
+        },
+        "params": {
+            "cacheID": "2ea0900dd9e1a0f9a3175c2c48dd4adf",
+            "id": null,
+            "metadata": {},
+            "name": "StoriesQuery",
+            "operationKind": "query",
+            "text": "query StoriesQuery(\n  $where: StoryWhereInput\n) {\n  stories(first: 10, orderBy: publishedAt_DESC, stage: PUBLISHED, where: $where) {\n    title\n    slug\n    publishedAt\n    coverImage {\n      url\n      id\n    }\n    category {\n      name\n      id\n    }\n    excerpt\n    id\n  }\n}\n"
+        }
+    } as any;
 })();
 (node as any).hash = 'd4aa35330af6aede4096d94a0ca0097b';
 export default node;

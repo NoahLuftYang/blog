@@ -1,4 +1,5 @@
 import { Container, Flex, HStack } from '@chakra-ui/react';
+import { css } from '@emotion/react';
 import mailgo from 'mailgo';
 import { useEffect } from 'react';
 
@@ -12,9 +13,9 @@ export const Footer = () => {
 
   return (
     <footer>
-      <Flex as={Container} justify="space-between" maxWidth="container.lg">
-        <p>의현 © 2020</p>
+      <Flex as={Container} css={css(`padding: 32px 0`)} justify="flex-end" maxWidth="container.lg">
         <HStack gutter={4}>
+          <p>의현 © 2021</p>
           <Anchor.External data-address="euihyun.yang.9x" data-domain="gmail.com" href="#mailgo">
             <Icon.Mail />
           </Anchor.External>

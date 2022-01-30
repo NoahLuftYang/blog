@@ -23,11 +23,11 @@ const query = graphql`
 export async function getStories(categoryName?: string) {
   const response = await fetchQuery<StoriesQuery>(
     query,
-    categoryName != null ? { category: { name: categoryName } } : undefined
+    categoryName == null ? undefined : { category: { name: categoryName } }
   );
 
   if (response == null) {
-    throw new Error();
+    throw new Error('스토리를 가져올 수 없습니다.');
   }
 
   return response;
