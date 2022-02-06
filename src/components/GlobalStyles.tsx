@@ -1,8 +1,6 @@
-import 'sanitize.css';
-
 import { css, Global } from '@emotion/react';
 
-export const GlobalStyles = () => {
+export function GlobalStyles() {
   return (
     <Global
       styles={css`
@@ -11,15 +9,15 @@ export const GlobalStyles = () => {
         }
 
         body {
-          font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans',
-            sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+          font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
         }
 
         a,
         button,
         textarea {
-          font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans',
-            sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+          font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
         }
 
         a,
@@ -29,4 +27,4 @@ export const GlobalStyles = () => {
       `}
     />
   );
-};
+}

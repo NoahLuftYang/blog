@@ -4,8 +4,8 @@ import { Layout } from '@app/components/Layout';
 import { SEO } from '@app/components/SEO';
 import { StoriesQueryResponse } from '@app/story/__generated__/StoriesQuery.graphql';
 import { StoryList } from '@app/story/StoryList';
-import { Container, Grid, GridItem } from '@chakra-ui/react';
 import { css } from '@emotion/react';
+import { Container, Grid, GridItem } from '@product/react-components';
 
 import { Header } from './Header';
 
@@ -28,10 +28,10 @@ export const StoriesPage = ({ categories, stories }: Props) => {
           maxWidth="container.lg"
         >
           <Grid templateColumns="repeat(12, 1fr)">
-            <GridItem colStart={2} colEnd={12}>
+            <GridItem colEnd={12} colStart={2}>
               <CategoryTab categories={[{ id: 'all', name: 'All' }, ...categories]} />
             </GridItem>
-            <GridItem colStart={3} colEnd={11} css={css(`margin-top: 24px`)}>
+            <GridItem colEnd={11} colStart={3} css={css(`margin-top: 24px`)}>
               <StoryList stories={stories} />
             </GridItem>
           </Grid>

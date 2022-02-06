@@ -1,8 +1,8 @@
 import { Layout } from '@app/components/Layout';
 import { StoriesQueryResponse } from '@app/story/__generated__/StoriesQuery.graphql';
 import { StoryList } from '@app/story/StoryList';
-import { Container, Grid, GridItem } from '@chakra-ui/react';
 import { css } from '@emotion/react';
+import { Container, Grid, GridItem } from '@product/react-components';
 
 import { Header } from './Header';
 

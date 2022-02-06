@@ -7,9 +7,6 @@ export const SEO = (props: NextSeoProps) => {
 SEO.Default = () => {
   return (
     <DefaultSeo
-      defaultTitle="의현"
-      titleTemplate="%s | 의현"
-      description="Personal engineering blog"
       additionalLinkTags={[
         { href: '/favicon/apple-touch-icon.png', rel: 'apple-touch-icon', sizes: '180x180' },
         { href: '/favicon/favicon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png' },
@@ -22,6 +19,9 @@ SEO.Default = () => {
         { content: '#000', name: 'msapplication-TileColor' },
         { content: '#000', name: 'theme-color' },
       ]}
+      defaultTitle="의현"
+      description="Personal engineering blog"
+      titleTemplate="%s | 의현"
     />
   );
 };

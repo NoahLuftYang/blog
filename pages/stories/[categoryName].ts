@@ -20,10 +20,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true };
   }
 
-  const [{ categories }, { stories }] = await Promise.all([
-    getCategories(),
-    getStories(params.categoryName),
-  ]);
+  const [{ categories }, { stories }] = await Promise.all([getCategories(), getStories(params.categoryName)]);
 
   return { props: { categories, stories } };
 };

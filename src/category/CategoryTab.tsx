@@ -1,6 +1,6 @@
 import { 라우트 } from '@app/constants/Route';
 import { capitalize } from '@app/utils/capitalize';
-import { Tab, TabList, Tabs } from '@chakra-ui/react';
+import { Tab, TabList, Tabs } from '@product/react-components';
 import styled from '@emotion/styled';
 import Router from 'next/router';
 

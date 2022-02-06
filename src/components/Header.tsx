@@ -1,6 +1,6 @@
 import { position } from '@app/utils/position';
-import { Container, Flex } from '@chakra-ui/react';
 import { css } from '@emotion/react';
+import { Container, Flex } from '@product/react-components';
 import { useWindowScroll } from 'react-use';
 
 import { Anchor } from './Anchor';

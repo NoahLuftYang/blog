@@ -4,8 +4,8 @@ import { SEO } from '@app/components/SEO';
 import { StoryQueryResponse } from '@app/story/__generated__/StoryQuery.graphql';
 import { Comments } from '@app/story/Comments';
 import { Content } from '@app/story/Content';
-import { Container, Flex, Grid, GridItem, Heading } from '@chakra-ui/react';
 import { css } from '@emotion/react';
+import { Container, Flex, Grid, GridItem, Heading } from '@product/react-components';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import { Header } from './Header';

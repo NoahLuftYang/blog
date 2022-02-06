@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex } from '@product/react-components';
 import { OmitProps } from '@stillmine/types';
 import { format, parseISO } from 'date-fns';
 

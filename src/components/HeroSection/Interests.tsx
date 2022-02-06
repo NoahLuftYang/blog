@@ -1,4 +1,4 @@
-import { Badge, HStack } from '@chakra-ui/react';
+import { Badge, HStack } from '@product/react-components';
 
 export const Interests = () => {
   return (

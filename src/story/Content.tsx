@@ -1,4 +1,4 @@
-import { Code, Heading, ListItem, Text, UnorderedList, VStack } from '@chakra-ui/react';
+import { Code, Heading, ListItem, Text, UnorderedList, VStack } from '@product/react-components';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ComponentProps, ReactNode } from 'react';
 

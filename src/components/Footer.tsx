@@ -1,5 +1,5 @@
-import { Container, Flex, HStack } from '@chakra-ui/react';
 import { css } from '@emotion/react';
+import { Container, Flex, HStack } from '@product/react-components';
 import mailgo from 'mailgo';
 import { useEffect } from 'react';
 

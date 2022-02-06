@@ -1,5 +1,5 @@
 import { externalLinkAttributes } from '@app/utils/externalLinkAttributes';
-import { Link } from '@chakra-ui/react';
+import { Link } from '@product/react-components';
 import NextLink from 'next/link';
 import { ComponentProps, forwardRef } from 'react';
 
