@@ -1,4 +1,5 @@
 import { environments } from '@app/constants/environments';
+import fetch from 'cross-fetch';
 import { Environment, FetchFunction, Network, RecordSource, Store } from 'relay-runtime';
 
 const fetcher: FetchFunction = async (operation, variables) => {
