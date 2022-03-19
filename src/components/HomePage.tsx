@@ -1,12 +1,12 @@
 import { Layout } from '@app/components/Layout';
-import { StoriesQueryResponse } from '@app/story/__generated__/StoriesQuery.graphql';
+import { StoriesQuery$data } from '@app/story/__generated__/StoriesQuery.graphql';
 import { StoryList } from '@app/story/StoryList';
 import { Container, Grid, GridItem } from '@stillmine/react-components';
 
 import { Header } from './Header';
 
 interface Props {
-  stories: StoriesQueryResponse['stories'];
+  stories: StoriesQuery$data['stories'];
 }
 
 export function HomePage({ stories }: Props) {

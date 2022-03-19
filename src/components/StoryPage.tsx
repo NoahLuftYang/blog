@@ -1,7 +1,7 @@
 import { Date } from '@app/components/Date';
 import { Layout } from '@app/components/Layout';
 import { SEO } from '@app/components/SEO';
-import { StoryQueryResponse } from '@app/story/__generated__/StoryQuery.graphql';
+import { StoryQuery$data } from '@app/story/__generated__/StoryQuery.graphql';
 import { Comments } from '@app/story/Comments';
 import { Content } from '@app/story/Content';
 import { Container, Flex, Grid, GridItem, Heading } from '@stillmine/react-components';
@@ -10,7 +10,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { Header } from './Header';
 
 interface Props {
-  story: StoryQueryResponse['story'] & {
+  story: StoryQuery$data['story'] & {
     content: MDXRemoteSerializeResult;
   };
 }

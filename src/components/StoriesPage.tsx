@@ -1,8 +1,8 @@
-import { CategoriesQueryResponse } from '@app/category/__generated__/CategoriesQuery.graphql';
+import { CategoriesQuery$data } from '@app/category/__generated__/CategoriesQuery.graphql';
 import { CategoryTab } from '@app/category/CategoryTab';
 import { Layout } from '@app/components/Layout';
 import { SEO } from '@app/components/SEO';
-import { StoriesQueryResponse } from '@app/story/__generated__/StoriesQuery.graphql';
+import { StoriesQuery$data } from '@app/story/__generated__/StoriesQuery.graphql';
 import { StoryList } from '@app/story/StoryList';
 import { css } from '@emotion/react';
 import { Container, Grid, GridItem } from '@stillmine/react-components';
@@ -10,8 +10,8 @@ import { Container, Grid, GridItem } from '@stillmine/react-components';
 import { Header } from './Header';
 
 interface Props {
-  categories: CategoriesQueryResponse['categories'];
-  stories: StoriesQueryResponse['stories'];
+  categories: CategoriesQuery$data['categories'];
+  stories: StoriesQuery$data['stories'];
 }
 
 export function StoriesPage({ categories, stories }: Props) {

@@ -2,10 +2,10 @@ import { Anchor } from '@app/components/Anchor';
 import { Date } from '@app/components/Date';
 import { Text, VStack } from '@stillmine/react-components';
 
-import { StoriesQueryResponse } from './__generated__/StoriesQuery.graphql';
+import { StoriesQuery$data } from './__generated__/StoriesQuery.graphql';
 
 interface Props {
-  stories: StoriesQueryResponse['stories'];
+  stories: StoriesQuery$data['stories'];
 }
 
 export function StoryList({ stories }: Props) {

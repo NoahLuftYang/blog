@@ -4,10 +4,10 @@ import styled from '@emotion/styled';
 import { Tab, TabList, Tabs } from '@stillmine/react-components';
 import Router from 'next/router';
 
-import { CategoriesQueryResponse } from './__generated__/CategoriesQuery.graphql';
+import { CategoriesQuery$data } from './__generated__/CategoriesQuery.graphql';
 
 interface Props {
-  categories: CategoriesQueryResponse['categories'];
+  categories: CategoriesQuery$data['categories'];
 }
 
 export function CategoryTab({ categories }: Props) {
