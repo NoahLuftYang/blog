@@ -1,7 +1,7 @@
 import { Layout } from '@app/components/Layout';
 import { SEO } from '@app/components/SEO';
 
-export const MePage = () => {
+export function MePage() {
   return (
     <Layout>
       <SEO title="안녕하세요 👋" />
@@ -16,4 +16,4 @@ export const MePage = () => {
       </section>
     </Layout>
   );
-};
+}

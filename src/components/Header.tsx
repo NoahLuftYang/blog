@@ -1,11 +1,11 @@
 import { position } from '@app/utils/position';
 import { css } from '@emotion/react';
-import { Container, Flex } from '@product/react-components';
+import { Container, Flex } from '@stillmine/react-components';
 import { useWindowScroll } from 'react-use';
 
 import { Anchor } from './Anchor';
 
-export const Header = () => {
+export function Header() {
   const { y } = useWindowScroll();
 
   return (
@@ -31,6 +31,6 @@ export const Header = () => {
       </Flex>
     </Flex>
   );
-};
+}
 
 Header.HEIGHT = 62;

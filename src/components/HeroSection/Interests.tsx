@@ -1,6 +1,6 @@
-import { Badge, HStack } from '@product/react-components';
+import { Badge, HStack } from '@stillmine/react-components';
 
-export const Interests = () => {
+export function Interests() {
   return (
     <section>
       <h2>Interests</h2>
@@ -15,4 +15,4 @@ export const Interests = () => {
       </HStack>
     </section>
   );
-};
+}

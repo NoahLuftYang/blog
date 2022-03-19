@@ -1,4 +1,4 @@
-import { Flex } from '@product/react-components';
+import { Flex } from '@stillmine/react-components';
 import { OmitProps } from '@stillmine/types';
 import { format, parseISO } from 'date-fns';
 
@@ -6,7 +6,7 @@ interface Props extends OmitProps<typeof Flex, 'align'> {
   isoDate: string;
 }
 
-export const Date = ({ isoDate, ...props }: Props) => {
+export function Date({ isoDate, ...props }: Props) {
   const date = parseISO(isoDate);
 
   return (
@@ -14,4 +14,4 @@ export const Date = ({ isoDate, ...props }: Props) => {
       {format(date, 'LLLL  d, yyyy')}
     </Flex>
   );
-};
+}

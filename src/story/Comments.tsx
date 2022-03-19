@@ -1,15 +1,15 @@
 import { useEffect, useRef } from 'react';
 
 const utteranc = {
-  'async': 'true',
-  'crossorigin': 'anonymous',
+  async: 'true',
+  crossorigin: 'anonymous',
   'issue-term': 'pathname',
-  'repo': 'noahluftyang/product',
-  'src': 'https://utteranc.es/client.js',
-  'theme': 'github-light',
+  repo: 'noahluftyang/product',
+  src: 'https://utteranc.es/client.js',
+  theme: 'github-light',
 };
 
-export const Comments = () => {
+export function Comments() {
   const commentsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ export const Comments = () => {
   }, []);
 
   return <div className="utterance" ref={commentsRef} />;
-};
+}

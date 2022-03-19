@@ -8,7 +8,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const Layout = ({ children }: Props) => {
+export function Layout({ children }: Props) {
   return (
     <>
       <section css={css(`min-height: 100vh`)}>
@@ -18,4 +18,4 @@ export const Layout = ({ children }: Props) => {
       <Footer />
     </>
   );
-};
+}

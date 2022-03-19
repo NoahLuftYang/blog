@@ -1,10 +1,10 @@
 import { DefaultSeo, NextSeo, NextSeoProps } from 'next-seo';
 
-export const SEO = (props: NextSeoProps) => {
+export function SEO(props: NextSeoProps) {
   return <NextSeo {...props} />;
-};
+}
 
-SEO.Default = () => {
+SEO.Default = function DefaultSEO() {
   return (
     <DefaultSeo
       additionalLinkTags={[

@@ -1,5 +1,5 @@
 import { environment } from '@app/relay/environment';
-import { GlobalErrorBoundary, ThemeProvider } from '@product/react-components';
+import { GlobalErrorBoundary, ThemeProvider } from '@stillmine/react-components';
 import { AppProps } from 'next/app';
 import { RelayEnvironmentProvider } from 'react-relay/hooks';
 
@@ -8,14 +8,14 @@ import { SEO } from './SEO';
 
 export function App({ Component, pageProps }: AppProps) {
   return (
-    <GlobalErrorBoundary>
-      <RelayEnvironmentProvider environment={environment}>
-        <ThemeProvider resetCSS={true}>
+    <ThemeProvider resetCSS={true}>
+      <GlobalStyles />
+      <GlobalErrorBoundary>
+        <RelayEnvironmentProvider environment={environment}>
           <SEO.Default />
-          <GlobalStyles />
           <Component {...pageProps} />
-        </ThemeProvider>
-      </RelayEnvironmentProvider>
-    </GlobalErrorBoundary>
+        </RelayEnvironmentProvider>
+      </GlobalErrorBoundary>
+    </ThemeProvider>
   );
 }

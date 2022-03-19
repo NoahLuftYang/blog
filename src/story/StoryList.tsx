@@ -1,7 +1,7 @@
 import { Anchor } from '@app/components/Anchor';
 import { Date } from '@app/components/Date';
-import { Text, VStack } from '@product/react-components';
 import { css } from '@emotion/react';
+import { Text, VStack } from '@stillmine/react-components';
 
 import { StoriesQueryResponse } from './__generated__/StoriesQuery.graphql';
 

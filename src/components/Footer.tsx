@@ -1,12 +1,12 @@
 import { css } from '@emotion/react';
-import { Container, Flex, HStack } from '@product/react-components';
+import { Container, Flex, HStack } from '@stillmine/react-components';
 import mailgo from 'mailgo';
 import { useEffect } from 'react';
 
 import { Anchor } from './Anchor';
 import { Icon } from './Icon/mod';
 
-export const Footer = () => {
+export function Footer() {
   useEffect(() => {
     mailgo();
   }, []);
@@ -14,7 +14,7 @@ export const Footer = () => {
   return (
     <footer>
       <Flex as={Container} css={css(`padding: 32px 0`)} justify="flex-end" maxWidth="container.lg">
-        <HStack gutter={4}>
+        <HStack spacing="4px">
           <p>의현 © 2021</p>
           <Anchor.External data-address="euihyun.yang.9x" data-domain="gmail.com" href="#mailgo">
             <Icon.Mail />
@@ -29,4 +29,4 @@ export const Footer = () => {
       </Flex>
     </footer>
   );
-};
+}

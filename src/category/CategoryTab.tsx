@@ -1,7 +1,7 @@
 import { 라우트 } from '@app/constants/Route';
 import { capitalize } from '@app/utils/capitalize';
-import { Tab, TabList, Tabs } from '@product/react-components';
 import styled from '@emotion/styled';
+import { Tab, TabList, Tabs } from '@stillmine/react-components';
 import Router from 'next/router';
 
 import { CategoriesQueryResponse } from './__generated__/CategoriesQuery.graphql';

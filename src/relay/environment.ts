@@ -1,15 +1,14 @@
+import { environments } from '@app/constants/environments';
 import { Environment, FetchFunction, Network, RecordSource, Store } from 'relay-runtime';
 
-const CMS_API_URL = process.env.NEXT_PUBLIC_CMS_API_URL ?? '';
-
 const fetcher: FetchFunction = async (operation, variables) => {
-  const response = await fetch(CMS_API_URL, {
+  const response = await fetch(environments.CMS.API_URL, {
     body: JSON.stringify({
       query: operation.text,
       variables,
     }),
     headers: {
-      'Accept': 'application/json',
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     method: 'POST',

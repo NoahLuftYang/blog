@@ -7,7 +7,7 @@ interface Props {
   url: string;
 }
 
-export const CoverImage: FC<Props> = ({ title, url, slug }) => {
+export function CoverImage({ title, url, slug }: Props) {
   const imageUrl = `${url.startsWith('/') ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ''}${url}`;
 
   if (slug) {
@@ -21,4 +21,4 @@ export const CoverImage: FC<Props> = ({ title, url, slug }) => {
   }
 
   return <img alt={title} src={imageUrl} />;
-};
+}

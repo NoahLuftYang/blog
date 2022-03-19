@@ -1,5 +1,5 @@
 {
-  "npm.packageManager": "yarn",
+  "npm.packageManager": "npm",
   "files.exclude": {
     "**/.next": true,
     "**/out": true,

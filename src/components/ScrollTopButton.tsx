@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 import { useEvent, useToggle } from 'react-use';
 
-export const ScrollTopButton = () => {
+export function ScrollTopButton() {
   const [visible, toggle] = useToggle(false);
 
   useEvent(
     'scroll',
     () => {
-      toggle(pageYOffset > 0);
+      toggle(scrollY > 0);
     },
     window
   );
@@ -23,6 +23,7 @@ export const ScrollTopButton = () => {
         position: fixed;
         right: 3rem;
       `}
+      type="button"
       onClick={() => {
         scrollTo({ behavior: 'smooth', top: 0 });
       }}
@@ -30,4 +31,4 @@ export const ScrollTopButton = () => {
       scroll to top
     </button>
   );
-};
+}

@@ -2,12 +2,12 @@ import { Anchor } from '@app/components/Anchor';
 import { Icon } from '@app/components/Icon/mod';
 import { 링크 } from '@app/constants/Link';
 import { css } from '@emotion/react';
-import { Button, HStack, VStack } from '@product/react-components';
+import { Button, HStack, VStack } from '@stillmine/react-components';
 
 import { HeroSectionTitle } from './HeroSectionTitle';
 import { Interests } from './Interests';
 
-export const HeroSection = () => {
+export function HeroSection() {
   return (
     <VStack spacing={16}>
       <HeroSectionTitle />
@@ -22,4 +22,4 @@ export const HeroSection = () => {
       </HStack>
     </VStack>
   );
-};
+}

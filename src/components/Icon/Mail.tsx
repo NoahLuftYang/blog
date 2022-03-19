@@ -2,7 +2,7 @@ import { memo, SVGProps } from 'react';
 
 interface Props extends SVGProps<SVGSVGElement> {}
 
-export const Mail = memo<Props>(({ color = '#000', height = 20, width = 20, ...props }) => {
+export const Mail = memo<Props>(function Mail({ color = '#000', height = 20, width = 20, ...props }) {
   return (
     <svg color={color} height={height} viewBox="0 0 20 20" width={width} {...props}>
       <path

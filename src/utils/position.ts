@@ -57,10 +57,10 @@ export function position(position: CSSProperties['position'], options: Options |
   `;
 }
 
-position.absolute = (options: Options) => {
+position.absolute = function absolute(options: Options) {
   return position('absolute', options);
 };
 
-position.fixed = (options: Options) => {
+position.fixed = function fixed(options: Options) {
   return position('fixed', options);
 };

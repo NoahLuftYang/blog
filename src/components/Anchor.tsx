@@ -1,5 +1,5 @@
 import { externalLinkAttributes } from '@app/utils/externalLinkAttributes';
-import { Link } from '@product/react-components';
+import { Link } from '@stillmine/react-components';
 import NextLink from 'next/link';
 import { ComponentProps, forwardRef } from 'react';
 
@@ -7,7 +7,7 @@ interface Props extends ComponentProps<typeof Link> {
   href: string;
 }
 
-const BaseAnchor = forwardRef<HTMLAnchorElement, Props>(({ href, ...props }, ref) => {
+const BaseAnchor = forwardRef<HTMLAnchorElement, Props>(function BaseAnchor({ href, ...props }, ref) {
   return (
     <NextLink href={href}>
       <Link ref={ref} {...props} />
@@ -15,7 +15,7 @@ const BaseAnchor = forwardRef<HTMLAnchorElement, Props>(({ href, ...props }, ref
   );
 });
 
-const ExternalAnchor = forwardRef<HTMLAnchorElement, Props>((props, ref) => {
+const ExternalAnchor = forwardRef<HTMLAnchorElement, Props>(function ExternalAnchor(props, ref) {
   return <Link ref={ref} {...externalLinkAttributes} {...props} />;
 });
 

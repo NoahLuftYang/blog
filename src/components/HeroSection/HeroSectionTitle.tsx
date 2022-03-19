@@ -9,7 +9,7 @@ const sentences = [
   '변화에 열려있습니다.',
 ] as const;
 
-export const HeroSectionTitle = () => {
+export function HeroSectionTitle() {
   const [index, setIndex] = useState(0);
 
   useInterval(() => {
@@ -23,4 +23,4 @@ export const HeroSectionTitle = () => {
       저는 <span css={css(`will-change: opacity`)}>{sentences[index]}</span>
     </h1>
   );
-};
+}

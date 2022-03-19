@@ -5,7 +5,7 @@ import { SEO } from '@app/components/SEO';
 import { StoriesQueryResponse } from '@app/story/__generated__/StoriesQuery.graphql';
 import { StoryList } from '@app/story/StoryList';
 import { css } from '@emotion/react';
-import { Container, Grid, GridItem } from '@product/react-components';
+import { Container, Grid, GridItem } from '@stillmine/react-components';
 
 import { Header } from './Header';
 
@@ -14,7 +14,7 @@ interface Props {
   stories: StoriesQueryResponse['stories'];
 }
 
-export const StoriesPage = ({ categories, stories }: Props) => {
+export function StoriesPage({ categories, stories }: Props) {
   return (
     <>
       <SEO title="스토리" />
@@ -39,4 +39,4 @@ export const StoriesPage = ({ categories, stories }: Props) => {
       </Layout>
     </>
   );
-};
+}
