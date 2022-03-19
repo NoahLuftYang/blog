@@ -1,5 +1,5 @@
 import { fetchQuery } from '@app/relay/fetchQuery';
-import { graphql } from 'react-relay';
+import { graphql } from 'relay-runtime';
 
 import { StoriesQuery } from './__generated__/StoriesQuery.graphql';
 
