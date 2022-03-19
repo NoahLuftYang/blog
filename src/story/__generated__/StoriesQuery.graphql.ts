@@ -1,794 +1,785 @@
+/**
+ * @generated SignedSource<<b968e86abbe62f3c1e6f5e8f99f9ec7f>>
+ * @lightSyntaxTransform
+ * @nogrep
+ */
+
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest } from "relay-runtime";
-
-export type ScheduledOperationStatus = "CANCELED" | "COMPLETED" | "FAILED" | "IN_PROGRESS" | "PENDING" | "%future added value";
-export type ScheduledReleaseStatus = "COMPLETED" | "FAILED" | "IN_PROGRESS" | "PENDING" | "%future added value";
+import { ConcreteRequest, Query } from 'relay-runtime';
+export type ScheduledOperationStatus = "PENDING" | "IN_PROGRESS" | "COMPLETED" | "FAILED" | "CANCELED" | "%future added value";
+export type ScheduledReleaseStatus = "PENDING" | "IN_PROGRESS" | "COMPLETED" | "FAILED" | "%future added value";
 export type Tags = "react" | "%future added value";
 export type UserKind = "MEMBER" | "PAT" | "PUBLIC" | "WEBHOOK" | "%future added value";
 export type StoryWhereInput = {
-    _search?: string | null | undefined;
-    AND?: Array<StoryWhereInput> | null | undefined;
-    OR?: Array<StoryWhereInput> | null | undefined;
-    NOT?: Array<StoryWhereInput> | null | undefined;
-    id?: string | null | undefined;
-    id_not?: string | null | undefined;
-    id_in?: Array<string> | null | undefined;
-    id_not_in?: Array<string> | null | undefined;
-    id_contains?: string | null | undefined;
-    id_not_contains?: string | null | undefined;
-    id_starts_with?: string | null | undefined;
-    id_not_starts_with?: string | null | undefined;
-    id_ends_with?: string | null | undefined;
-    id_not_ends_with?: string | null | undefined;
-    createdAt?: unknown | null | undefined;
-    createdAt_not?: unknown | null | undefined;
-    createdAt_in?: Array<unknown> | null | undefined;
-    createdAt_not_in?: Array<unknown> | null | undefined;
-    createdAt_lt?: unknown | null | undefined;
-    createdAt_lte?: unknown | null | undefined;
-    createdAt_gt?: unknown | null | undefined;
-    createdAt_gte?: unknown | null | undefined;
-    updatedAt?: unknown | null | undefined;
-    updatedAt_not?: unknown | null | undefined;
-    updatedAt_in?: Array<unknown> | null | undefined;
-    updatedAt_not_in?: Array<unknown> | null | undefined;
-    updatedAt_lt?: unknown | null | undefined;
-    updatedAt_lte?: unknown | null | undefined;
-    updatedAt_gt?: unknown | null | undefined;
-    updatedAt_gte?: unknown | null | undefined;
-    publishedAt?: unknown | null | undefined;
-    publishedAt_not?: unknown | null | undefined;
-    publishedAt_in?: Array<unknown> | null | undefined;
-    publishedAt_not_in?: Array<unknown> | null | undefined;
-    publishedAt_lt?: unknown | null | undefined;
-    publishedAt_lte?: unknown | null | undefined;
-    publishedAt_gt?: unknown | null | undefined;
-    publishedAt_gte?: unknown | null | undefined;
-    title?: string | null | undefined;
-    title_not?: string | null | undefined;
-    title_in?: Array<string> | null | undefined;
-    title_not_in?: Array<string> | null | undefined;
-    title_contains?: string | null | undefined;
-    title_not_contains?: string | null | undefined;
-    title_starts_with?: string | null | undefined;
-    title_not_starts_with?: string | null | undefined;
-    title_ends_with?: string | null | undefined;
-    title_not_ends_with?: string | null | undefined;
-    slug?: string | null | undefined;
-    slug_not?: string | null | undefined;
-    slug_in?: Array<string> | null | undefined;
-    slug_not_in?: Array<string> | null | undefined;
-    slug_contains?: string | null | undefined;
-    slug_not_contains?: string | null | undefined;
-    slug_starts_with?: string | null | undefined;
-    slug_not_starts_with?: string | null | undefined;
-    slug_ends_with?: string | null | undefined;
-    slug_not_ends_with?: string | null | undefined;
-    content?: string | null | undefined;
-    content_not?: string | null | undefined;
-    content_in?: Array<string> | null | undefined;
-    content_not_in?: Array<string> | null | undefined;
-    content_contains?: string | null | undefined;
-    content_not_contains?: string | null | undefined;
-    content_starts_with?: string | null | undefined;
-    content_not_starts_with?: string | null | undefined;
-    content_ends_with?: string | null | undefined;
-    content_not_ends_with?: string | null | undefined;
-    excerpt?: string | null | undefined;
-    excerpt_not?: string | null | undefined;
-    excerpt_in?: Array<string> | null | undefined;
-    excerpt_not_in?: Array<string> | null | undefined;
-    excerpt_contains?: string | null | undefined;
-    excerpt_not_contains?: string | null | undefined;
-    excerpt_starts_with?: string | null | undefined;
-    excerpt_not_starts_with?: string | null | undefined;
-    excerpt_ends_with?: string | null | undefined;
-    excerpt_not_ends_with?: string | null | undefined;
-    createdBy?: UserWhereInput | null | undefined;
-    updatedBy?: UserWhereInput | null | undefined;
-    publishedBy?: UserWhereInput | null | undefined;
-    coverImage?: AssetWhereInput | null | undefined;
-    category?: CategoryWhereInput | null | undefined;
-    seo?: SeoWhereInput | null | undefined;
-    tags?: Array<Tags> | null | undefined;
-    tags_not?: Array<Tags> | null | undefined;
-    tags_contains_all?: Array<Tags> | null | undefined;
-    tags_contains_some?: Array<Tags> | null | undefined;
-    tags_contains_none?: Array<Tags> | null | undefined;
-    scheduledIn_every?: ScheduledOperationWhereInput | null | undefined;
-    scheduledIn_some?: ScheduledOperationWhereInput | null | undefined;
-    scheduledIn_none?: ScheduledOperationWhereInput | null | undefined;
+  _search?: string | null;
+  AND?: ReadonlyArray<StoryWhereInput> | null;
+  OR?: ReadonlyArray<StoryWhereInput> | null;
+  NOT?: ReadonlyArray<StoryWhereInput> | null;
+  id?: string | null;
+  id_not?: string | null;
+  id_in?: ReadonlyArray<string> | null;
+  id_not_in?: ReadonlyArray<string> | null;
+  id_contains?: string | null;
+  id_not_contains?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_ends_with?: string | null;
+  id_not_ends_with?: string | null;
+  createdAt?: any | null;
+  createdAt_not?: any | null;
+  createdAt_in?: ReadonlyArray<any> | null;
+  createdAt_not_in?: ReadonlyArray<any> | null;
+  createdAt_lt?: any | null;
+  createdAt_lte?: any | null;
+  createdAt_gt?: any | null;
+  createdAt_gte?: any | null;
+  updatedAt?: any | null;
+  updatedAt_not?: any | null;
+  updatedAt_in?: ReadonlyArray<any> | null;
+  updatedAt_not_in?: ReadonlyArray<any> | null;
+  updatedAt_lt?: any | null;
+  updatedAt_lte?: any | null;
+  updatedAt_gt?: any | null;
+  updatedAt_gte?: any | null;
+  publishedAt?: any | null;
+  publishedAt_not?: any | null;
+  publishedAt_in?: ReadonlyArray<any> | null;
+  publishedAt_not_in?: ReadonlyArray<any> | null;
+  publishedAt_lt?: any | null;
+  publishedAt_lte?: any | null;
+  publishedAt_gt?: any | null;
+  publishedAt_gte?: any | null;
+  title?: string | null;
+  title_not?: string | null;
+  title_in?: ReadonlyArray<string> | null;
+  title_not_in?: ReadonlyArray<string> | null;
+  title_contains?: string | null;
+  title_not_contains?: string | null;
+  title_starts_with?: string | null;
+  title_not_starts_with?: string | null;
+  title_ends_with?: string | null;
+  title_not_ends_with?: string | null;
+  slug?: string | null;
+  slug_not?: string | null;
+  slug_in?: ReadonlyArray<string> | null;
+  slug_not_in?: ReadonlyArray<string> | null;
+  slug_contains?: string | null;
+  slug_not_contains?: string | null;
+  slug_starts_with?: string | null;
+  slug_not_starts_with?: string | null;
+  slug_ends_with?: string | null;
+  slug_not_ends_with?: string | null;
+  content?: string | null;
+  content_not?: string | null;
+  content_in?: ReadonlyArray<string> | null;
+  content_not_in?: ReadonlyArray<string> | null;
+  content_contains?: string | null;
+  content_not_contains?: string | null;
+  content_starts_with?: string | null;
+  content_not_starts_with?: string | null;
+  content_ends_with?: string | null;
+  content_not_ends_with?: string | null;
+  excerpt?: string | null;
+  excerpt_not?: string | null;
+  excerpt_in?: ReadonlyArray<string> | null;
+  excerpt_not_in?: ReadonlyArray<string> | null;
+  excerpt_contains?: string | null;
+  excerpt_not_contains?: string | null;
+  excerpt_starts_with?: string | null;
+  excerpt_not_starts_with?: string | null;
+  excerpt_ends_with?: string | null;
+  excerpt_not_ends_with?: string | null;
+  createdBy?: UserWhereInput | null;
+  updatedBy?: UserWhereInput | null;
+  publishedBy?: UserWhereInput | null;
+  coverImage?: AssetWhereInput | null;
+  category?: CategoryWhereInput | null;
+  seo?: SeoWhereInput | null;
+  tags?: ReadonlyArray<Tags> | null;
+  tags_not?: ReadonlyArray<Tags> | null;
+  tags_contains_all?: ReadonlyArray<Tags> | null;
+  tags_contains_some?: ReadonlyArray<Tags> | null;
+  tags_contains_none?: ReadonlyArray<Tags> | null;
+  scheduledIn_every?: ScheduledOperationWhereInput | null;
+  scheduledIn_some?: ScheduledOperationWhereInput | null;
+  scheduledIn_none?: ScheduledOperationWhereInput | null;
 };
 export type UserWhereInput = {
-    _search?: string | null | undefined;
-    AND?: Array<UserWhereInput> | null | undefined;
-    OR?: Array<UserWhereInput> | null | undefined;
-    NOT?: Array<UserWhereInput> | null | undefined;
-    id?: string | null | undefined;
-    id_not?: string | null | undefined;
-    id_in?: Array<string> | null | undefined;
-    id_not_in?: Array<string> | null | undefined;
-    id_contains?: string | null | undefined;
-    id_not_contains?: string | null | undefined;
-    id_starts_with?: string | null | undefined;
-    id_not_starts_with?: string | null | undefined;
-    id_ends_with?: string | null | undefined;
-    id_not_ends_with?: string | null | undefined;
-    createdAt?: unknown | null | undefined;
-    createdAt_not?: unknown | null | undefined;
-    createdAt_in?: Array<unknown> | null | undefined;
-    createdAt_not_in?: Array<unknown> | null | undefined;
-    createdAt_lt?: unknown | null | undefined;
-    createdAt_lte?: unknown | null | undefined;
-    createdAt_gt?: unknown | null | undefined;
-    createdAt_gte?: unknown | null | undefined;
-    updatedAt?: unknown | null | undefined;
-    updatedAt_not?: unknown | null | undefined;
-    updatedAt_in?: Array<unknown> | null | undefined;
-    updatedAt_not_in?: Array<unknown> | null | undefined;
-    updatedAt_lt?: unknown | null | undefined;
-    updatedAt_lte?: unknown | null | undefined;
-    updatedAt_gt?: unknown | null | undefined;
-    updatedAt_gte?: unknown | null | undefined;
-    publishedAt?: unknown | null | undefined;
-    publishedAt_not?: unknown | null | undefined;
-    publishedAt_in?: Array<unknown> | null | undefined;
-    publishedAt_not_in?: Array<unknown> | null | undefined;
-    publishedAt_lt?: unknown | null | undefined;
-    publishedAt_lte?: unknown | null | undefined;
-    publishedAt_gt?: unknown | null | undefined;
-    publishedAt_gte?: unknown | null | undefined;
-    name?: string | null | undefined;
-    name_not?: string | null | undefined;
-    name_in?: Array<string> | null | undefined;
-    name_not_in?: Array<string> | null | undefined;
-    name_contains?: string | null | undefined;
-    name_not_contains?: string | null | undefined;
-    name_starts_with?: string | null | undefined;
-    name_not_starts_with?: string | null | undefined;
-    name_ends_with?: string | null | undefined;
-    name_not_ends_with?: string | null | undefined;
-    picture?: string | null | undefined;
-    picture_not?: string | null | undefined;
-    picture_in?: Array<string> | null | undefined;
-    picture_not_in?: Array<string> | null | undefined;
-    picture_contains?: string | null | undefined;
-    picture_not_contains?: string | null | undefined;
-    picture_starts_with?: string | null | undefined;
-    picture_not_starts_with?: string | null | undefined;
-    picture_ends_with?: string | null | undefined;
-    picture_not_ends_with?: string | null | undefined;
-    isActive?: boolean | null | undefined;
-    isActive_not?: boolean | null | undefined;
-    kind?: UserKind | null | undefined;
-    kind_not?: UserKind | null | undefined;
-    kind_in?: Array<UserKind> | null | undefined;
-    kind_not_in?: Array<UserKind> | null | undefined;
+  _search?: string | null;
+  AND?: ReadonlyArray<UserWhereInput> | null;
+  OR?: ReadonlyArray<UserWhereInput> | null;
+  NOT?: ReadonlyArray<UserWhereInput> | null;
+  id?: string | null;
+  id_not?: string | null;
+  id_in?: ReadonlyArray<string> | null;
+  id_not_in?: ReadonlyArray<string> | null;
+  id_contains?: string | null;
+  id_not_contains?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_ends_with?: string | null;
+  id_not_ends_with?: string | null;
+  createdAt?: any | null;
+  createdAt_not?: any | null;
+  createdAt_in?: ReadonlyArray<any> | null;
+  createdAt_not_in?: ReadonlyArray<any> | null;
+  createdAt_lt?: any | null;
+  createdAt_lte?: any | null;
+  createdAt_gt?: any | null;
+  createdAt_gte?: any | null;
+  updatedAt?: any | null;
+  updatedAt_not?: any | null;
+  updatedAt_in?: ReadonlyArray<any> | null;
+  updatedAt_not_in?: ReadonlyArray<any> | null;
+  updatedAt_lt?: any | null;
+  updatedAt_lte?: any | null;
+  updatedAt_gt?: any | null;
+  updatedAt_gte?: any | null;
+  publishedAt?: any | null;
+  publishedAt_not?: any | null;
+  publishedAt_in?: ReadonlyArray<any> | null;
+  publishedAt_not_in?: ReadonlyArray<any> | null;
+  publishedAt_lt?: any | null;
+  publishedAt_lte?: any | null;
+  publishedAt_gt?: any | null;
+  publishedAt_gte?: any | null;
+  name?: string | null;
+  name_not?: string | null;
+  name_in?: ReadonlyArray<string> | null;
+  name_not_in?: ReadonlyArray<string> | null;
+  name_contains?: string | null;
+  name_not_contains?: string | null;
+  name_starts_with?: string | null;
+  name_not_starts_with?: string | null;
+  name_ends_with?: string | null;
+  name_not_ends_with?: string | null;
+  picture?: string | null;
+  picture_not?: string | null;
+  picture_in?: ReadonlyArray<string> | null;
+  picture_not_in?: ReadonlyArray<string> | null;
+  picture_contains?: string | null;
+  picture_not_contains?: string | null;
+  picture_starts_with?: string | null;
+  picture_not_starts_with?: string | null;
+  picture_ends_with?: string | null;
+  picture_not_ends_with?: string | null;
+  isActive?: boolean | null;
+  isActive_not?: boolean | null;
+  kind?: UserKind | null;
+  kind_not?: UserKind | null;
+  kind_in?: ReadonlyArray<UserKind> | null;
+  kind_not_in?: ReadonlyArray<UserKind> | null;
 };
 export type AssetWhereInput = {
-    _search?: string | null | undefined;
-    AND?: Array<AssetWhereInput> | null | undefined;
-    OR?: Array<AssetWhereInput> | null | undefined;
-    NOT?: Array<AssetWhereInput> | null | undefined;
-    id?: string | null | undefined;
-    id_not?: string | null | undefined;
-    id_in?: Array<string> | null | undefined;
-    id_not_in?: Array<string> | null | undefined;
-    id_contains?: string | null | undefined;
-    id_not_contains?: string | null | undefined;
-    id_starts_with?: string | null | undefined;
-    id_not_starts_with?: string | null | undefined;
-    id_ends_with?: string | null | undefined;
-    id_not_ends_with?: string | null | undefined;
-    createdAt?: unknown | null | undefined;
-    createdAt_not?: unknown | null | undefined;
-    createdAt_in?: Array<unknown> | null | undefined;
-    createdAt_not_in?: Array<unknown> | null | undefined;
-    createdAt_lt?: unknown | null | undefined;
-    createdAt_lte?: unknown | null | undefined;
-    createdAt_gt?: unknown | null | undefined;
-    createdAt_gte?: unknown | null | undefined;
-    updatedAt?: unknown | null | undefined;
-    updatedAt_not?: unknown | null | undefined;
-    updatedAt_in?: Array<unknown> | null | undefined;
-    updatedAt_not_in?: Array<unknown> | null | undefined;
-    updatedAt_lt?: unknown | null | undefined;
-    updatedAt_lte?: unknown | null | undefined;
-    updatedAt_gt?: unknown | null | undefined;
-    updatedAt_gte?: unknown | null | undefined;
-    publishedAt?: unknown | null | undefined;
-    publishedAt_not?: unknown | null | undefined;
-    publishedAt_in?: Array<unknown> | null | undefined;
-    publishedAt_not_in?: Array<unknown> | null | undefined;
-    publishedAt_lt?: unknown | null | undefined;
-    publishedAt_lte?: unknown | null | undefined;
-    publishedAt_gt?: unknown | null | undefined;
-    publishedAt_gte?: unknown | null | undefined;
-    handle?: string | null | undefined;
-    handle_not?: string | null | undefined;
-    handle_in?: Array<string> | null | undefined;
-    handle_not_in?: Array<string> | null | undefined;
-    handle_contains?: string | null | undefined;
-    handle_not_contains?: string | null | undefined;
-    handle_starts_with?: string | null | undefined;
-    handle_not_starts_with?: string | null | undefined;
-    handle_ends_with?: string | null | undefined;
-    handle_not_ends_with?: string | null | undefined;
-    fileName?: string | null | undefined;
-    fileName_not?: string | null | undefined;
-    fileName_in?: Array<string> | null | undefined;
-    fileName_not_in?: Array<string> | null | undefined;
-    fileName_contains?: string | null | undefined;
-    fileName_not_contains?: string | null | undefined;
-    fileName_starts_with?: string | null | undefined;
-    fileName_not_starts_with?: string | null | undefined;
-    fileName_ends_with?: string | null | undefined;
-    fileName_not_ends_with?: string | null | undefined;
-    height?: number | null | undefined;
-    height_not?: number | null | undefined;
-    height_in?: Array<number> | null | undefined;
-    height_not_in?: Array<number> | null | undefined;
-    height_lt?: number | null | undefined;
-    height_lte?: number | null | undefined;
-    height_gt?: number | null | undefined;
-    height_gte?: number | null | undefined;
-    width?: number | null | undefined;
-    width_not?: number | null | undefined;
-    width_in?: Array<number> | null | undefined;
-    width_not_in?: Array<number> | null | undefined;
-    width_lt?: number | null | undefined;
-    width_lte?: number | null | undefined;
-    width_gt?: number | null | undefined;
-    width_gte?: number | null | undefined;
-    size?: number | null | undefined;
-    size_not?: number | null | undefined;
-    size_in?: Array<number> | null | undefined;
-    size_not_in?: Array<number> | null | undefined;
-    size_lt?: number | null | undefined;
-    size_lte?: number | null | undefined;
-    size_gt?: number | null | undefined;
-    size_gte?: number | null | undefined;
-    mimeType?: string | null | undefined;
-    mimeType_not?: string | null | undefined;
-    mimeType_in?: Array<string> | null | undefined;
-    mimeType_not_in?: Array<string> | null | undefined;
-    mimeType_contains?: string | null | undefined;
-    mimeType_not_contains?: string | null | undefined;
-    mimeType_starts_with?: string | null | undefined;
-    mimeType_not_starts_with?: string | null | undefined;
-    mimeType_ends_with?: string | null | undefined;
-    mimeType_not_ends_with?: string | null | undefined;
-    createdBy?: UserWhereInput | null | undefined;
-    updatedBy?: UserWhereInput | null | undefined;
-    publishedBy?: UserWhereInput | null | undefined;
-    coverImageStory_every?: StoryWhereInput | null | undefined;
-    coverImageStory_some?: StoryWhereInput | null | undefined;
-    coverImageStory_none?: StoryWhereInput | null | undefined;
-    imageSeo_every?: SeoWhereInput | null | undefined;
-    imageSeo_some?: SeoWhereInput | null | undefined;
-    imageSeo_none?: SeoWhereInput | null | undefined;
-    scheduledIn_every?: ScheduledOperationWhereInput | null | undefined;
-    scheduledIn_some?: ScheduledOperationWhereInput | null | undefined;
-    scheduledIn_none?: ScheduledOperationWhereInput | null | undefined;
+  _search?: string | null;
+  AND?: ReadonlyArray<AssetWhereInput> | null;
+  OR?: ReadonlyArray<AssetWhereInput> | null;
+  NOT?: ReadonlyArray<AssetWhereInput> | null;
+  id?: string | null;
+  id_not?: string | null;
+  id_in?: ReadonlyArray<string> | null;
+  id_not_in?: ReadonlyArray<string> | null;
+  id_contains?: string | null;
+  id_not_contains?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_ends_with?: string | null;
+  id_not_ends_with?: string | null;
+  createdAt?: any | null;
+  createdAt_not?: any | null;
+  createdAt_in?: ReadonlyArray<any> | null;
+  createdAt_not_in?: ReadonlyArray<any> | null;
+  createdAt_lt?: any | null;
+  createdAt_lte?: any | null;
+  createdAt_gt?: any | null;
+  createdAt_gte?: any | null;
+  updatedAt?: any | null;
+  updatedAt_not?: any | null;
+  updatedAt_in?: ReadonlyArray<any> | null;
+  updatedAt_not_in?: ReadonlyArray<any> | null;
+  updatedAt_lt?: any | null;
+  updatedAt_lte?: any | null;
+  updatedAt_gt?: any | null;
+  updatedAt_gte?: any | null;
+  publishedAt?: any | null;
+  publishedAt_not?: any | null;
+  publishedAt_in?: ReadonlyArray<any> | null;
+  publishedAt_not_in?: ReadonlyArray<any> | null;
+  publishedAt_lt?: any | null;
+  publishedAt_lte?: any | null;
+  publishedAt_gt?: any | null;
+  publishedAt_gte?: any | null;
+  handle?: string | null;
+  handle_not?: string | null;
+  handle_in?: ReadonlyArray<string> | null;
+  handle_not_in?: ReadonlyArray<string> | null;
+  handle_contains?: string | null;
+  handle_not_contains?: string | null;
+  handle_starts_with?: string | null;
+  handle_not_starts_with?: string | null;
+  handle_ends_with?: string | null;
+  handle_not_ends_with?: string | null;
+  fileName?: string | null;
+  fileName_not?: string | null;
+  fileName_in?: ReadonlyArray<string> | null;
+  fileName_not_in?: ReadonlyArray<string> | null;
+  fileName_contains?: string | null;
+  fileName_not_contains?: string | null;
+  fileName_starts_with?: string | null;
+  fileName_not_starts_with?: string | null;
+  fileName_ends_with?: string | null;
+  fileName_not_ends_with?: string | null;
+  height?: number | null;
+  height_not?: number | null;
+  height_in?: ReadonlyArray<number> | null;
+  height_not_in?: ReadonlyArray<number> | null;
+  height_lt?: number | null;
+  height_lte?: number | null;
+  height_gt?: number | null;
+  height_gte?: number | null;
+  width?: number | null;
+  width_not?: number | null;
+  width_in?: ReadonlyArray<number> | null;
+  width_not_in?: ReadonlyArray<number> | null;
+  width_lt?: number | null;
+  width_lte?: number | null;
+  width_gt?: number | null;
+  width_gte?: number | null;
+  size?: number | null;
+  size_not?: number | null;
+  size_in?: ReadonlyArray<number> | null;
+  size_not_in?: ReadonlyArray<number> | null;
+  size_lt?: number | null;
+  size_lte?: number | null;
+  size_gt?: number | null;
+  size_gte?: number | null;
+  mimeType?: string | null;
+  mimeType_not?: string | null;
+  mimeType_in?: ReadonlyArray<string> | null;
+  mimeType_not_in?: ReadonlyArray<string> | null;
+  mimeType_contains?: string | null;
+  mimeType_not_contains?: string | null;
+  mimeType_starts_with?: string | null;
+  mimeType_not_starts_with?: string | null;
+  mimeType_ends_with?: string | null;
+  mimeType_not_ends_with?: string | null;
+  createdBy?: UserWhereInput | null;
+  updatedBy?: UserWhereInput | null;
+  publishedBy?: UserWhereInput | null;
+  coverImageStory_every?: StoryWhereInput | null;
+  coverImageStory_some?: StoryWhereInput | null;
+  coverImageStory_none?: StoryWhereInput | null;
+  imageSeo_every?: SeoWhereInput | null;
+  imageSeo_some?: SeoWhereInput | null;
+  imageSeo_none?: SeoWhereInput | null;
+  scheduledIn_every?: ScheduledOperationWhereInput | null;
+  scheduledIn_some?: ScheduledOperationWhereInput | null;
+  scheduledIn_none?: ScheduledOperationWhereInput | null;
 };
 export type SeoWhereInput = {
-    _search?: string | null | undefined;
-    AND?: Array<SeoWhereInput> | null | undefined;
-    OR?: Array<SeoWhereInput> | null | undefined;
-    NOT?: Array<SeoWhereInput> | null | undefined;
-    id?: string | null | undefined;
-    id_not?: string | null | undefined;
-    id_in?: Array<string> | null | undefined;
-    id_not_in?: Array<string> | null | undefined;
-    id_contains?: string | null | undefined;
-    id_not_contains?: string | null | undefined;
-    id_starts_with?: string | null | undefined;
-    id_not_starts_with?: string | null | undefined;
-    id_ends_with?: string | null | undefined;
-    id_not_ends_with?: string | null | undefined;
-    createdAt?: unknown | null | undefined;
-    createdAt_not?: unknown | null | undefined;
-    createdAt_in?: Array<unknown> | null | undefined;
-    createdAt_not_in?: Array<unknown> | null | undefined;
-    createdAt_lt?: unknown | null | undefined;
-    createdAt_lte?: unknown | null | undefined;
-    createdAt_gt?: unknown | null | undefined;
-    createdAt_gte?: unknown | null | undefined;
-    updatedAt?: unknown | null | undefined;
-    updatedAt_not?: unknown | null | undefined;
-    updatedAt_in?: Array<unknown> | null | undefined;
-    updatedAt_not_in?: Array<unknown> | null | undefined;
-    updatedAt_lt?: unknown | null | undefined;
-    updatedAt_lte?: unknown | null | undefined;
-    updatedAt_gt?: unknown | null | undefined;
-    updatedAt_gte?: unknown | null | undefined;
-    publishedAt?: unknown | null | undefined;
-    publishedAt_not?: unknown | null | undefined;
-    publishedAt_in?: Array<unknown> | null | undefined;
-    publishedAt_not_in?: Array<unknown> | null | undefined;
-    publishedAt_lt?: unknown | null | undefined;
-    publishedAt_lte?: unknown | null | undefined;
-    publishedAt_gt?: unknown | null | undefined;
-    publishedAt_gte?: unknown | null | undefined;
-    title?: string | null | undefined;
-    title_not?: string | null | undefined;
-    title_in?: Array<string> | null | undefined;
-    title_not_in?: Array<string> | null | undefined;
-    title_contains?: string | null | undefined;
-    title_not_contains?: string | null | undefined;
-    title_starts_with?: string | null | undefined;
-    title_not_starts_with?: string | null | undefined;
-    title_ends_with?: string | null | undefined;
-    title_not_ends_with?: string | null | undefined;
-    description?: string | null | undefined;
-    description_not?: string | null | undefined;
-    description_in?: Array<string> | null | undefined;
-    description_not_in?: Array<string> | null | undefined;
-    description_contains?: string | null | undefined;
-    description_not_contains?: string | null | undefined;
-    description_starts_with?: string | null | undefined;
-    description_not_starts_with?: string | null | undefined;
-    description_ends_with?: string | null | undefined;
-    description_not_ends_with?: string | null | undefined;
-    keywords?: Array<string> | null | undefined;
-    keywords_not?: Array<string> | null | undefined;
-    keywords_contains_all?: Array<string> | null | undefined;
-    keywords_contains_some?: Array<string> | null | undefined;
-    keywords_contains_none?: Array<string> | null | undefined;
-    createdBy?: UserWhereInput | null | undefined;
-    updatedBy?: UserWhereInput | null | undefined;
-    publishedBy?: UserWhereInput | null | undefined;
-    image?: AssetWhereInput | null | undefined;
-    story?: StoryWhereInput | null | undefined;
-    scheduledIn_every?: ScheduledOperationWhereInput | null | undefined;
-    scheduledIn_some?: ScheduledOperationWhereInput | null | undefined;
-    scheduledIn_none?: ScheduledOperationWhereInput | null | undefined;
+  _search?: string | null;
+  AND?: ReadonlyArray<SeoWhereInput> | null;
+  OR?: ReadonlyArray<SeoWhereInput> | null;
+  NOT?: ReadonlyArray<SeoWhereInput> | null;
+  id?: string | null;
+  id_not?: string | null;
+  id_in?: ReadonlyArray<string> | null;
+  id_not_in?: ReadonlyArray<string> | null;
+  id_contains?: string | null;
+  id_not_contains?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_ends_with?: string | null;
+  id_not_ends_with?: string | null;
+  createdAt?: any | null;
+  createdAt_not?: any | null;
+  createdAt_in?: ReadonlyArray<any> | null;
+  createdAt_not_in?: ReadonlyArray<any> | null;
+  createdAt_lt?: any | null;
+  createdAt_lte?: any | null;
+  createdAt_gt?: any | null;
+  createdAt_gte?: any | null;
+  updatedAt?: any | null;
+  updatedAt_not?: any | null;
+  updatedAt_in?: ReadonlyArray<any> | null;
+  updatedAt_not_in?: ReadonlyArray<any> | null;
+  updatedAt_lt?: any | null;
+  updatedAt_lte?: any | null;
+  updatedAt_gt?: any | null;
+  updatedAt_gte?: any | null;
+  publishedAt?: any | null;
+  publishedAt_not?: any | null;
+  publishedAt_in?: ReadonlyArray<any> | null;
+  publishedAt_not_in?: ReadonlyArray<any> | null;
+  publishedAt_lt?: any | null;
+  publishedAt_lte?: any | null;
+  publishedAt_gt?: any | null;
+  publishedAt_gte?: any | null;
+  title?: string | null;
+  title_not?: string | null;
+  title_in?: ReadonlyArray<string> | null;
+  title_not_in?: ReadonlyArray<string> | null;
+  title_contains?: string | null;
+  title_not_contains?: string | null;
+  title_starts_with?: string | null;
+  title_not_starts_with?: string | null;
+  title_ends_with?: string | null;
+  title_not_ends_with?: string | null;
+  description?: string | null;
+  description_not?: string | null;
+  description_in?: ReadonlyArray<string> | null;
+  description_not_in?: ReadonlyArray<string> | null;
+  description_contains?: string | null;
+  description_not_contains?: string | null;
+  description_starts_with?: string | null;
+  description_not_starts_with?: string | null;
+  description_ends_with?: string | null;
+  description_not_ends_with?: string | null;
+  keywords?: ReadonlyArray<string> | null;
+  keywords_not?: ReadonlyArray<string> | null;
+  keywords_contains_all?: ReadonlyArray<string> | null;
+  keywords_contains_some?: ReadonlyArray<string> | null;
+  keywords_contains_none?: ReadonlyArray<string> | null;
+  createdBy?: UserWhereInput | null;
+  updatedBy?: UserWhereInput | null;
+  publishedBy?: UserWhereInput | null;
+  image?: AssetWhereInput | null;
+  story?: StoryWhereInput | null;
+  scheduledIn_every?: ScheduledOperationWhereInput | null;
+  scheduledIn_some?: ScheduledOperationWhereInput | null;
+  scheduledIn_none?: ScheduledOperationWhereInput | null;
 };
 export type ScheduledOperationWhereInput = {
-    _search?: string | null | undefined;
-    AND?: Array<ScheduledOperationWhereInput> | null | undefined;
-    OR?: Array<ScheduledOperationWhereInput> | null | undefined;
-    NOT?: Array<ScheduledOperationWhereInput> | null | undefined;
-    id?: string | null | undefined;
-    id_not?: string | null | undefined;
-    id_in?: Array<string> | null | undefined;
-    id_not_in?: Array<string> | null | undefined;
-    id_contains?: string | null | undefined;
-    id_not_contains?: string | null | undefined;
-    id_starts_with?: string | null | undefined;
-    id_not_starts_with?: string | null | undefined;
-    id_ends_with?: string | null | undefined;
-    id_not_ends_with?: string | null | undefined;
-    createdAt?: unknown | null | undefined;
-    createdAt_not?: unknown | null | undefined;
-    createdAt_in?: Array<unknown> | null | undefined;
-    createdAt_not_in?: Array<unknown> | null | undefined;
-    createdAt_lt?: unknown | null | undefined;
-    createdAt_lte?: unknown | null | undefined;
-    createdAt_gt?: unknown | null | undefined;
-    createdAt_gte?: unknown | null | undefined;
-    updatedAt?: unknown | null | undefined;
-    updatedAt_not?: unknown | null | undefined;
-    updatedAt_in?: Array<unknown> | null | undefined;
-    updatedAt_not_in?: Array<unknown> | null | undefined;
-    updatedAt_lt?: unknown | null | undefined;
-    updatedAt_lte?: unknown | null | undefined;
-    updatedAt_gt?: unknown | null | undefined;
-    updatedAt_gte?: unknown | null | undefined;
-    publishedAt?: unknown | null | undefined;
-    publishedAt_not?: unknown | null | undefined;
-    publishedAt_in?: Array<unknown> | null | undefined;
-    publishedAt_not_in?: Array<unknown> | null | undefined;
-    publishedAt_lt?: unknown | null | undefined;
-    publishedAt_lte?: unknown | null | undefined;
-    publishedAt_gt?: unknown | null | undefined;
-    publishedAt_gte?: unknown | null | undefined;
-    description?: string | null | undefined;
-    description_not?: string | null | undefined;
-    description_in?: Array<string> | null | undefined;
-    description_not_in?: Array<string> | null | undefined;
-    description_contains?: string | null | undefined;
-    description_not_contains?: string | null | undefined;
-    description_starts_with?: string | null | undefined;
-    description_not_starts_with?: string | null | undefined;
-    description_ends_with?: string | null | undefined;
-    description_not_ends_with?: string | null | undefined;
-    errorMessage?: string | null | undefined;
-    errorMessage_not?: string | null | undefined;
-    errorMessage_in?: Array<string> | null | undefined;
-    errorMessage_not_in?: Array<string> | null | undefined;
-    errorMessage_contains?: string | null | undefined;
-    errorMessage_not_contains?: string | null | undefined;
-    errorMessage_starts_with?: string | null | undefined;
-    errorMessage_not_starts_with?: string | null | undefined;
-    errorMessage_ends_with?: string | null | undefined;
-    errorMessage_not_ends_with?: string | null | undefined;
-    createdBy?: UserWhereInput | null | undefined;
-    updatedBy?: UserWhereInput | null | undefined;
-    publishedBy?: UserWhereInput | null | undefined;
-    release?: ScheduledReleaseWhereInput | null | undefined;
-    status?: ScheduledOperationStatus | null | undefined;
-    status_not?: ScheduledOperationStatus | null | undefined;
-    status_in?: Array<ScheduledOperationStatus> | null | undefined;
-    status_not_in?: Array<ScheduledOperationStatus> | null | undefined;
+  _search?: string | null;
+  AND?: ReadonlyArray<ScheduledOperationWhereInput> | null;
+  OR?: ReadonlyArray<ScheduledOperationWhereInput> | null;
+  NOT?: ReadonlyArray<ScheduledOperationWhereInput> | null;
+  id?: string | null;
+  id_not?: string | null;
+  id_in?: ReadonlyArray<string> | null;
+  id_not_in?: ReadonlyArray<string> | null;
+  id_contains?: string | null;
+  id_not_contains?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_ends_with?: string | null;
+  id_not_ends_with?: string | null;
+  createdAt?: any | null;
+  createdAt_not?: any | null;
+  createdAt_in?: ReadonlyArray<any> | null;
+  createdAt_not_in?: ReadonlyArray<any> | null;
+  createdAt_lt?: any | null;
+  createdAt_lte?: any | null;
+  createdAt_gt?: any | null;
+  createdAt_gte?: any | null;
+  updatedAt?: any | null;
+  updatedAt_not?: any | null;
+  updatedAt_in?: ReadonlyArray<any> | null;
+  updatedAt_not_in?: ReadonlyArray<any> | null;
+  updatedAt_lt?: any | null;
+  updatedAt_lte?: any | null;
+  updatedAt_gt?: any | null;
+  updatedAt_gte?: any | null;
+  publishedAt?: any | null;
+  publishedAt_not?: any | null;
+  publishedAt_in?: ReadonlyArray<any> | null;
+  publishedAt_not_in?: ReadonlyArray<any> | null;
+  publishedAt_lt?: any | null;
+  publishedAt_lte?: any | null;
+  publishedAt_gt?: any | null;
+  publishedAt_gte?: any | null;
+  description?: string | null;
+  description_not?: string | null;
+  description_in?: ReadonlyArray<string> | null;
+  description_not_in?: ReadonlyArray<string> | null;
+  description_contains?: string | null;
+  description_not_contains?: string | null;
+  description_starts_with?: string | null;
+  description_not_starts_with?: string | null;
+  description_ends_with?: string | null;
+  description_not_ends_with?: string | null;
+  errorMessage?: string | null;
+  errorMessage_not?: string | null;
+  errorMessage_in?: ReadonlyArray<string> | null;
+  errorMessage_not_in?: ReadonlyArray<string> | null;
+  errorMessage_contains?: string | null;
+  errorMessage_not_contains?: string | null;
+  errorMessage_starts_with?: string | null;
+  errorMessage_not_starts_with?: string | null;
+  errorMessage_ends_with?: string | null;
+  errorMessage_not_ends_with?: string | null;
+  createdBy?: UserWhereInput | null;
+  updatedBy?: UserWhereInput | null;
+  publishedBy?: UserWhereInput | null;
+  release?: ScheduledReleaseWhereInput | null;
+  status?: ScheduledOperationStatus | null;
+  status_not?: ScheduledOperationStatus | null;
+  status_in?: ReadonlyArray<ScheduledOperationStatus> | null;
+  status_not_in?: ReadonlyArray<ScheduledOperationStatus> | null;
 };
 export type ScheduledReleaseWhereInput = {
-    _search?: string | null | undefined;
-    AND?: Array<ScheduledReleaseWhereInput> | null | undefined;
-    OR?: Array<ScheduledReleaseWhereInput> | null | undefined;
-    NOT?: Array<ScheduledReleaseWhereInput> | null | undefined;
-    id?: string | null | undefined;
-    id_not?: string | null | undefined;
-    id_in?: Array<string> | null | undefined;
-    id_not_in?: Array<string> | null | undefined;
-    id_contains?: string | null | undefined;
-    id_not_contains?: string | null | undefined;
-    id_starts_with?: string | null | undefined;
-    id_not_starts_with?: string | null | undefined;
-    id_ends_with?: string | null | undefined;
-    id_not_ends_with?: string | null | undefined;
-    createdAt?: unknown | null | undefined;
-    createdAt_not?: unknown | null | undefined;
-    createdAt_in?: Array<unknown> | null | undefined;
-    createdAt_not_in?: Array<unknown> | null | undefined;
-    createdAt_lt?: unknown | null | undefined;
-    createdAt_lte?: unknown | null | undefined;
-    createdAt_gt?: unknown | null | undefined;
-    createdAt_gte?: unknown | null | undefined;
-    updatedAt?: unknown | null | undefined;
-    updatedAt_not?: unknown | null | undefined;
-    updatedAt_in?: Array<unknown> | null | undefined;
-    updatedAt_not_in?: Array<unknown> | null | undefined;
-    updatedAt_lt?: unknown | null | undefined;
-    updatedAt_lte?: unknown | null | undefined;
-    updatedAt_gt?: unknown | null | undefined;
-    updatedAt_gte?: unknown | null | undefined;
-    publishedAt?: unknown | null | undefined;
-    publishedAt_not?: unknown | null | undefined;
-    publishedAt_in?: Array<unknown> | null | undefined;
-    publishedAt_not_in?: Array<unknown> | null | undefined;
-    publishedAt_lt?: unknown | null | undefined;
-    publishedAt_lte?: unknown | null | undefined;
-    publishedAt_gt?: unknown | null | undefined;
-    publishedAt_gte?: unknown | null | undefined;
-    title?: string | null | undefined;
-    title_not?: string | null | undefined;
-    title_in?: Array<string> | null | undefined;
-    title_not_in?: Array<string> | null | undefined;
-    title_contains?: string | null | undefined;
-    title_not_contains?: string | null | undefined;
-    title_starts_with?: string | null | undefined;
-    title_not_starts_with?: string | null | undefined;
-    title_ends_with?: string | null | undefined;
-    title_not_ends_with?: string | null | undefined;
-    description?: string | null | undefined;
-    description_not?: string | null | undefined;
-    description_in?: Array<string> | null | undefined;
-    description_not_in?: Array<string> | null | undefined;
-    description_contains?: string | null | undefined;
-    description_not_contains?: string | null | undefined;
-    description_starts_with?: string | null | undefined;
-    description_not_starts_with?: string | null | undefined;
-    description_ends_with?: string | null | undefined;
-    description_not_ends_with?: string | null | undefined;
-    errorMessage?: string | null | undefined;
-    errorMessage_not?: string | null | undefined;
-    errorMessage_in?: Array<string> | null | undefined;
-    errorMessage_not_in?: Array<string> | null | undefined;
-    errorMessage_contains?: string | null | undefined;
-    errorMessage_not_contains?: string | null | undefined;
-    errorMessage_starts_with?: string | null | undefined;
-    errorMessage_not_starts_with?: string | null | undefined;
-    errorMessage_ends_with?: string | null | undefined;
-    errorMessage_not_ends_with?: string | null | undefined;
-    isActive?: boolean | null | undefined;
-    isActive_not?: boolean | null | undefined;
-    isImplicit?: boolean | null | undefined;
-    isImplicit_not?: boolean | null | undefined;
-    releaseAt?: unknown | null | undefined;
-    releaseAt_not?: unknown | null | undefined;
-    releaseAt_in?: Array<unknown> | null | undefined;
-    releaseAt_not_in?: Array<unknown> | null | undefined;
-    releaseAt_lt?: unknown | null | undefined;
-    releaseAt_lte?: unknown | null | undefined;
-    releaseAt_gt?: unknown | null | undefined;
-    releaseAt_gte?: unknown | null | undefined;
-    createdBy?: UserWhereInput | null | undefined;
-    updatedBy?: UserWhereInput | null | undefined;
-    publishedBy?: UserWhereInput | null | undefined;
-    operations_every?: ScheduledOperationWhereInput | null | undefined;
-    operations_some?: ScheduledOperationWhereInput | null | undefined;
-    operations_none?: ScheduledOperationWhereInput | null | undefined;
-    status?: ScheduledReleaseStatus | null | undefined;
-    status_not?: ScheduledReleaseStatus | null | undefined;
-    status_in?: Array<ScheduledReleaseStatus> | null | undefined;
-    status_not_in?: Array<ScheduledReleaseStatus> | null | undefined;
+  _search?: string | null;
+  AND?: ReadonlyArray<ScheduledReleaseWhereInput> | null;
+  OR?: ReadonlyArray<ScheduledReleaseWhereInput> | null;
+  NOT?: ReadonlyArray<ScheduledReleaseWhereInput> | null;
+  id?: string | null;
+  id_not?: string | null;
+  id_in?: ReadonlyArray<string> | null;
+  id_not_in?: ReadonlyArray<string> | null;
+  id_contains?: string | null;
+  id_not_contains?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_ends_with?: string | null;
+  id_not_ends_with?: string | null;
+  createdAt?: any | null;
+  createdAt_not?: any | null;
+  createdAt_in?: ReadonlyArray<any> | null;
+  createdAt_not_in?: ReadonlyArray<any> | null;
+  createdAt_lt?: any | null;
+  createdAt_lte?: any | null;
+  createdAt_gt?: any | null;
+  createdAt_gte?: any | null;
+  updatedAt?: any | null;
+  updatedAt_not?: any | null;
+  updatedAt_in?: ReadonlyArray<any> | null;
+  updatedAt_not_in?: ReadonlyArray<any> | null;
+  updatedAt_lt?: any | null;
+  updatedAt_lte?: any | null;
+  updatedAt_gt?: any | null;
+  updatedAt_gte?: any | null;
+  publishedAt?: any | null;
+  publishedAt_not?: any | null;
+  publishedAt_in?: ReadonlyArray<any> | null;
+  publishedAt_not_in?: ReadonlyArray<any> | null;
+  publishedAt_lt?: any | null;
+  publishedAt_lte?: any | null;
+  publishedAt_gt?: any | null;
+  publishedAt_gte?: any | null;
+  title?: string | null;
+  title_not?: string | null;
+  title_in?: ReadonlyArray<string> | null;
+  title_not_in?: ReadonlyArray<string> | null;
+  title_contains?: string | null;
+  title_not_contains?: string | null;
+  title_starts_with?: string | null;
+  title_not_starts_with?: string | null;
+  title_ends_with?: string | null;
+  title_not_ends_with?: string | null;
+  description?: string | null;
+  description_not?: string | null;
+  description_in?: ReadonlyArray<string> | null;
+  description_not_in?: ReadonlyArray<string> | null;
+  description_contains?: string | null;
+  description_not_contains?: string | null;
+  description_starts_with?: string | null;
+  description_not_starts_with?: string | null;
+  description_ends_with?: string | null;
+  description_not_ends_with?: string | null;
+  errorMessage?: string | null;
+  errorMessage_not?: string | null;
+  errorMessage_in?: ReadonlyArray<string> | null;
+  errorMessage_not_in?: ReadonlyArray<string> | null;
+  errorMessage_contains?: string | null;
+  errorMessage_not_contains?: string | null;
+  errorMessage_starts_with?: string | null;
+  errorMessage_not_starts_with?: string | null;
+  errorMessage_ends_with?: string | null;
+  errorMessage_not_ends_with?: string | null;
+  isActive?: boolean | null;
+  isActive_not?: boolean | null;
+  isImplicit?: boolean | null;
+  isImplicit_not?: boolean | null;
+  releaseAt?: any | null;
+  releaseAt_not?: any | null;
+  releaseAt_in?: ReadonlyArray<any> | null;
+  releaseAt_not_in?: ReadonlyArray<any> | null;
+  releaseAt_lt?: any | null;
+  releaseAt_lte?: any | null;
+  releaseAt_gt?: any | null;
+  releaseAt_gte?: any | null;
+  createdBy?: UserWhereInput | null;
+  updatedBy?: UserWhereInput | null;
+  publishedBy?: UserWhereInput | null;
+  operations_every?: ScheduledOperationWhereInput | null;
+  operations_some?: ScheduledOperationWhereInput | null;
+  operations_none?: ScheduledOperationWhereInput | null;
+  status?: ScheduledReleaseStatus | null;
+  status_not?: ScheduledReleaseStatus | null;
+  status_in?: ReadonlyArray<ScheduledReleaseStatus> | null;
+  status_not_in?: ReadonlyArray<ScheduledReleaseStatus> | null;
 };
 export type CategoryWhereInput = {
-    _search?: string | null | undefined;
-    AND?: Array<CategoryWhereInput> | null | undefined;
-    OR?: Array<CategoryWhereInput> | null | undefined;
-    NOT?: Array<CategoryWhereInput> | null | undefined;
-    id?: string | null | undefined;
-    id_not?: string | null | undefined;
-    id_in?: Array<string> | null | undefined;
-    id_not_in?: Array<string> | null | undefined;
-    id_contains?: string | null | undefined;
-    id_not_contains?: string | null | undefined;
-    id_starts_with?: string | null | undefined;
-    id_not_starts_with?: string | null | undefined;
-    id_ends_with?: string | null | undefined;
-    id_not_ends_with?: string | null | undefined;
-    createdAt?: unknown | null | undefined;
-    createdAt_not?: unknown | null | undefined;
-    createdAt_in?: Array<unknown> | null | undefined;
-    createdAt_not_in?: Array<unknown> | null | undefined;
-    createdAt_lt?: unknown | null | undefined;
-    createdAt_lte?: unknown | null | undefined;
-    createdAt_gt?: unknown | null | undefined;
-    createdAt_gte?: unknown | null | undefined;
-    updatedAt?: unknown | null | undefined;
-    updatedAt_not?: unknown | null | undefined;
-    updatedAt_in?: Array<unknown> | null | undefined;
-    updatedAt_not_in?: Array<unknown> | null | undefined;
-    updatedAt_lt?: unknown | null | undefined;
-    updatedAt_lte?: unknown | null | undefined;
-    updatedAt_gt?: unknown | null | undefined;
-    updatedAt_gte?: unknown | null | undefined;
-    publishedAt?: unknown | null | undefined;
-    publishedAt_not?: unknown | null | undefined;
-    publishedAt_in?: Array<unknown> | null | undefined;
-    publishedAt_not_in?: Array<unknown> | null | undefined;
-    publishedAt_lt?: unknown | null | undefined;
-    publishedAt_lte?: unknown | null | undefined;
-    publishedAt_gt?: unknown | null | undefined;
-    publishedAt_gte?: unknown | null | undefined;
-    name?: string | null | undefined;
-    name_not?: string | null | undefined;
-    name_in?: Array<string> | null | undefined;
-    name_not_in?: Array<string> | null | undefined;
-    name_contains?: string | null | undefined;
-    name_not_contains?: string | null | undefined;
-    name_starts_with?: string | null | undefined;
-    name_not_starts_with?: string | null | undefined;
-    name_ends_with?: string | null | undefined;
-    name_not_ends_with?: string | null | undefined;
-    createdBy?: UserWhereInput | null | undefined;
-    updatedBy?: UserWhereInput | null | undefined;
-    publishedBy?: UserWhereInput | null | undefined;
-    scheduledIn_every?: ScheduledOperationWhereInput | null | undefined;
-    scheduledIn_some?: ScheduledOperationWhereInput | null | undefined;
-    scheduledIn_none?: ScheduledOperationWhereInput | null | undefined;
+  _search?: string | null;
+  AND?: ReadonlyArray<CategoryWhereInput> | null;
+  OR?: ReadonlyArray<CategoryWhereInput> | null;
+  NOT?: ReadonlyArray<CategoryWhereInput> | null;
+  id?: string | null;
+  id_not?: string | null;
+  id_in?: ReadonlyArray<string> | null;
+  id_not_in?: ReadonlyArray<string> | null;
+  id_contains?: string | null;
+  id_not_contains?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_ends_with?: string | null;
+  id_not_ends_with?: string | null;
+  createdAt?: any | null;
+  createdAt_not?: any | null;
+  createdAt_in?: ReadonlyArray<any> | null;
+  createdAt_not_in?: ReadonlyArray<any> | null;
+  createdAt_lt?: any | null;
+  createdAt_lte?: any | null;
+  createdAt_gt?: any | null;
+  createdAt_gte?: any | null;
+  updatedAt?: any | null;
+  updatedAt_not?: any | null;
+  updatedAt_in?: ReadonlyArray<any> | null;
+  updatedAt_not_in?: ReadonlyArray<any> | null;
+  updatedAt_lt?: any | null;
+  updatedAt_lte?: any | null;
+  updatedAt_gt?: any | null;
+  updatedAt_gte?: any | null;
+  publishedAt?: any | null;
+  publishedAt_not?: any | null;
+  publishedAt_in?: ReadonlyArray<any> | null;
+  publishedAt_not_in?: ReadonlyArray<any> | null;
+  publishedAt_lt?: any | null;
+  publishedAt_lte?: any | null;
+  publishedAt_gt?: any | null;
+  publishedAt_gte?: any | null;
+  name?: string | null;
+  name_not?: string | null;
+  name_in?: ReadonlyArray<string> | null;
+  name_not_in?: ReadonlyArray<string> | null;
+  name_contains?: string | null;
+  name_not_contains?: string | null;
+  name_starts_with?: string | null;
+  name_not_starts_with?: string | null;
+  name_ends_with?: string | null;
+  name_not_ends_with?: string | null;
+  createdBy?: UserWhereInput | null;
+  updatedBy?: UserWhereInput | null;
+  publishedBy?: UserWhereInput | null;
+  scheduledIn_every?: ScheduledOperationWhereInput | null;
+  scheduledIn_some?: ScheduledOperationWhereInput | null;
+  scheduledIn_none?: ScheduledOperationWhereInput | null;
 };
-export type StoriesQueryVariables = {
-    where?: StoryWhereInput | null | undefined;
+export type StoriesQuery$variables = {
+  where?: StoryWhereInput | null;
 };
-export type StoriesQueryResponse = {
-    readonly stories: ReadonlyArray<{
-        readonly title: string;
-        readonly slug: string;
-        readonly publishedAt: unknown | null;
-        readonly coverImage: {
-            readonly url: string;
-        } | null;
-        readonly category: {
-            readonly name: string;
-        } | null;
-        readonly excerpt: string;
-    }>;
+export type StoriesQuery$data = {
+  readonly stories: ReadonlyArray<{
+    readonly title: string;
+    readonly slug: string;
+    readonly publishedAt: any | null;
+    readonly coverImage: {
+      readonly url: string;
+    } | null;
+    readonly category: {
+      readonly name: string;
+    } | null;
+    readonly excerpt: string;
+  }>;
 };
 export type StoriesQuery = {
-    readonly response: StoriesQueryResponse;
-    readonly variables: StoriesQueryVariables;
+  variables: StoriesQuery$variables;
+  response: StoriesQuery$data;
 };
 
-
-
-/*
-query StoriesQuery(
-  $where: StoryWhereInput
-) {
-  stories(first: 10, orderBy: publishedAt_DESC, stage: PUBLISHED, where: $where) {
-    title
-    slug
-    publishedAt
-    coverImage {
-      url
-      id
-    }
-    category {
-      name
-      id
-    }
-    excerpt
-    id
+const node: ConcreteRequest = (function(){
+var v0 = [
+  {
+    "defaultValue": null,
+    "kind": "LocalArgument",
+    "name": "where"
   }
-}
-*/
-
-const node: ConcreteRequest = (function () {
-    var v0 = [
-        {
-            "defaultValue": null,
-            "kind": "LocalArgument",
-            "name": "where"
-        } as any
-    ], v1 = [
-        {
-            "kind": "Literal",
-            "name": "first",
-            "value": 10
-        } as any,
-        {
-            "kind": "Literal",
-            "name": "orderBy",
-            "value": "publishedAt_DESC"
-        } as any,
-        {
-            "kind": "Literal",
-            "name": "stage",
-            "value": "PUBLISHED"
-        } as any,
-        {
-            "kind": "Variable",
-            "name": "where",
-            "variableName": "where"
-        } as any
-    ], v2 = {
+],
+v1 = [
+  {
+    "kind": "Literal",
+    "name": "first",
+    "value": 10
+  },
+  {
+    "kind": "Literal",
+    "name": "orderBy",
+    "value": "publishedAt_DESC"
+  },
+  {
+    "kind": "Literal",
+    "name": "stage",
+    "value": "PUBLISHED"
+  },
+  {
+    "kind": "Variable",
+    "name": "where",
+    "variableName": "where"
+  }
+],
+v2 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "title",
+  "storageKey": null
+},
+v3 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "slug",
+  "storageKey": null
+},
+v4 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "publishedAt",
+  "storageKey": null
+},
+v5 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "url",
+  "storageKey": null
+},
+v6 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "name",
+  "storageKey": null
+},
+v7 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "excerpt",
+  "storageKey": null
+},
+v8 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "id",
+  "storageKey": null
+};
+return {
+  "fragment": {
+    "argumentDefinitions": (v0/*: any*/),
+    "kind": "Fragment",
+    "metadata": null,
+    "name": "StoriesQuery",
+    "selections": [
+      {
         "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "title",
-        "storageKey": null
-    } as any, v3 = {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "slug",
-        "storageKey": null
-    } as any, v4 = {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "publishedAt",
-        "storageKey": null
-    } as any, v5 = {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "url",
-        "storageKey": null
-    } as any, v6 = {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "name",
-        "storageKey": null
-    } as any, v7 = {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "excerpt",
-        "storageKey": null
-    } as any, v8 = {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "id",
-        "storageKey": null
-    } as any;
-    return {
-        "fragment": {
-            "argumentDefinitions": (v0 /*: any*/),
-            "kind": "Fragment",
-            "metadata": null,
-            "name": "StoriesQuery",
+        "args": (v1/*: any*/),
+        "concreteType": "Story",
+        "kind": "LinkedField",
+        "name": "stories",
+        "plural": true,
+        "selections": [
+          (v2/*: any*/),
+          (v3/*: any*/),
+          (v4/*: any*/),
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Asset",
+            "kind": "LinkedField",
+            "name": "coverImage",
+            "plural": false,
             "selections": [
-                {
-                    "alias": null,
-                    "args": (v1 /*: any*/),
-                    "concreteType": "Story",
-                    "kind": "LinkedField",
-                    "name": "stories",
-                    "plural": true,
-                    "selections": [
-                        (v2 /*: any*/),
-                        (v3 /*: any*/),
-                        (v4 /*: any*/),
-                        {
-                            "alias": null,
-                            "args": null,
-                            "concreteType": "Asset",
-                            "kind": "LinkedField",
-                            "name": "coverImage",
-                            "plural": false,
-                            "selections": [
-                                (v5 /*: any*/)
-                            ],
-                            "storageKey": null
-                        },
-                        {
-                            "alias": null,
-                            "args": null,
-                            "concreteType": "Category",
-                            "kind": "LinkedField",
-                            "name": "category",
-                            "plural": false,
-                            "selections": [
-                                (v6 /*: any*/)
-                            ],
-                            "storageKey": null
-                        },
-                        (v7 /*: any*/)
-                    ],
-                    "storageKey": null
-                }
+              (v5/*: any*/)
             ],
-            "type": "Query",
-            "abstractKey": null
-        },
-        "kind": "Request",
-        "operation": {
-            "argumentDefinitions": (v0 /*: any*/),
-            "kind": "Operation",
-            "name": "StoriesQuery",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Category",
+            "kind": "LinkedField",
+            "name": "category",
+            "plural": false,
             "selections": [
-                {
-                    "alias": null,
-                    "args": (v1 /*: any*/),
-                    "concreteType": "Story",
-                    "kind": "LinkedField",
-                    "name": "stories",
-                    "plural": true,
-                    "selections": [
-                        (v2 /*: any*/),
-                        (v3 /*: any*/),
-                        (v4 /*: any*/),
-                        {
-                            "alias": null,
-                            "args": null,
-                            "concreteType": "Asset",
-                            "kind": "LinkedField",
-                            "name": "coverImage",
-                            "plural": false,
-                            "selections": [
-                                (v5 /*: any*/),
-                                (v8 /*: any*/)
-                            ],
-                            "storageKey": null
-                        },
-                        {
-                            "alias": null,
-                            "args": null,
-                            "concreteType": "Category",
-                            "kind": "LinkedField",
-                            "name": "category",
-                            "plural": false,
-                            "selections": [
-                                (v6 /*: any*/),
-                                (v8 /*: any*/)
-                            ],
-                            "storageKey": null
-                        },
-                        (v7 /*: any*/),
-                        (v8 /*: any*/)
-                    ],
-                    "storageKey": null
-                }
-            ]
-        },
-        "params": {
-            "cacheID": "2ea0900dd9e1a0f9a3175c2c48dd4adf",
-            "id": null,
-            "metadata": {},
-            "name": "StoriesQuery",
-            "operationKind": "query",
-            "text": "query StoriesQuery(\n  $where: StoryWhereInput\n) {\n  stories(first: 10, orderBy: publishedAt_DESC, stage: PUBLISHED, where: $where) {\n    title\n    slug\n    publishedAt\n    coverImage {\n      url\n      id\n    }\n    category {\n      name\n      id\n    }\n    excerpt\n    id\n  }\n}\n"
-        }
-    } as any;
+              (v6/*: any*/)
+            ],
+            "storageKey": null
+          },
+          (v7/*: any*/)
+        ],
+        "storageKey": null
+      }
+    ],
+    "type": "Query",
+    "abstractKey": null
+  },
+  "kind": "Request",
+  "operation": {
+    "argumentDefinitions": (v0/*: any*/),
+    "kind": "Operation",
+    "name": "StoriesQuery",
+    "selections": [
+      {
+        "alias": null,
+        "args": (v1/*: any*/),
+        "concreteType": "Story",
+        "kind": "LinkedField",
+        "name": "stories",
+        "plural": true,
+        "selections": [
+          (v2/*: any*/),
+          (v3/*: any*/),
+          (v4/*: any*/),
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Asset",
+            "kind": "LinkedField",
+            "name": "coverImage",
+            "plural": false,
+            "selections": [
+              (v5/*: any*/),
+              (v8/*: any*/)
+            ],
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Category",
+            "kind": "LinkedField",
+            "name": "category",
+            "plural": false,
+            "selections": [
+              (v6/*: any*/),
+              (v8/*: any*/)
+            ],
+            "storageKey": null
+          },
+          (v7/*: any*/),
+          (v8/*: any*/)
+        ],
+        "storageKey": null
+      }
+    ]
+  },
+  "params": {
+    "cacheID": "2ea0900dd9e1a0f9a3175c2c48dd4adf",
+    "id": null,
+    "metadata": {},
+    "name": "StoriesQuery",
+    "operationKind": "query",
+    "text": "query StoriesQuery(\n  $where: StoryWhereInput\n) {\n  stories(first: 10, orderBy: publishedAt_DESC, stage: PUBLISHED, where: $where) {\n    title\n    slug\n    publishedAt\n    coverImage {\n      url\n      id\n    }\n    category {\n      name\n      id\n    }\n    excerpt\n    id\n  }\n}\n"
+  }
+};
 })();
-(node as any).hash = 'd4aa35330af6aede4096d94a0ca0097b';
+
+(node as any).hash = "d4aa35330af6aede4096d94a0ca0097b";
+
 export default node;

@@ -1,13 +1,11 @@
-import { nextConfig } from '@stillmine/next-config';
+const { nextConfig } = require('@stillmine/next-config');
 
-export default nextConfig({
+const relay = require('./relay.config');
+
+module.exports = nextConfig({
   compiler: {
     emotion: true,
-    relay: {
-      language: 'typescript',
-      schema: './schema.graphql',
-      src: './src',
-    },
+    relay,
     removeConsole: true,
   },
   publicRuntimeConfig: {
