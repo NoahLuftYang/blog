@@ -1,15 +1,9 @@
-import {
-  fetchQuery as relayFetchQuery,
-  GraphQLTaggedNode,
-  OperationType,
-  Variables,
-} from 'relay-runtime';
+import { fetchQuery as relayFetchQuery, GraphQLTaggedNode, OperationType, Variables } from 'relay-runtime';
 
-import { environment } from './environment';
+import { initEnvironment } from './environment';
 
-export function fetchQuery<T extends OperationType>(
-  query: GraphQLTaggedNode,
-  variables: Variables = {}
-) {
+export function fetchQuery<T extends OperationType>(query: GraphQLTaggedNode, variables: Variables = {}) {
+  const environment = initEnvironment();
+
   return relayFetchQuery<T>(environment, query, variables).toPromise();
 }
