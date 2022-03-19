@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { useState } from 'react';
-import { useInterval } from 'react-use';
+import useInterval from 'react-use/lib/useInterval';
 
 const sentences = [
   '의현입니다.',

@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "@stillmine/tsconfig/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
@@ -8,7 +8,9 @@
     "noEmit": true,
     "paths": {
       "@app/*": ["./src/*"]
-    }
+    },
+    "target": "es5",
+    "module": "esnext"
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

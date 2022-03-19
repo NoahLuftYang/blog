@@ -1,7 +1,7 @@
 import { position } from '@app/utils/position';
 import { css } from '@emotion/react';
 import { Container, Flex } from '@stillmine/react-components';
-import { useWindowScroll } from 'react-use';
+import useWindowScroll from 'react-use/lib/useWindowScroll';
 
 import { Anchor } from './Anchor';
 

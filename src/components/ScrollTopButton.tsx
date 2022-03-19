@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
-import { useEvent, useToggle } from 'react-use';
+import useEvent from 'react-use/lib/useEvent';
+import useToggle from 'react-use/lib/useToggle';
 
 export function ScrollTopButton() {
   const [visible, toggle] = useToggle(false);
