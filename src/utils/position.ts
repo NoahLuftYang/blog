@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import { CSSProperties } from 'react';
 
 interface Options {
@@ -48,13 +47,10 @@ export function position(position: CSSProperties['position'], options: Options |
     }
   }
 
-  return css`
-    position: ${position};
-
-    ${Object.entries(spacing)
-      .map(([direction, unit]) => `${direction}: ${unit}px;`)
-      .join('')}
-  `;
+  return {
+    position,
+    ...Object.fromEntries(Object.entries(spacing).map(([direction, unit]) => [direction, `${unit}px`])),
+  };
 }
 
 position.absolute = function absolute(options: Options) {

@@ -1,6 +1,5 @@
 import { Anchor } from '@app/components/Anchor';
 import { Date } from '@app/components/Date';
-import { css } from '@emotion/react';
 import { Text, VStack } from '@stillmine/react-components';
 
 import { StoriesQueryResponse } from './__generated__/StoriesQuery.graphql';
@@ -18,11 +17,11 @@ export function StoryList({ stories }: Props) {
     <VStack
       align="stretch"
       as="ul"
-      css={css`
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      `}
+      css={{
+        listStyle: 'none',
+        margin: 0,
+        padding: 0,
+      }}
       spacing="32px"
     >
       {stories.map(({ excerpt, publishedAt, slug, title }) => {

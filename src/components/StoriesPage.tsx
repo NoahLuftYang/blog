@@ -21,10 +21,10 @@ export function StoriesPage({ categories, stories }: Props) {
       <Layout>
         <Container
           as="main"
-          css={css`
-            margin-top: ${Header.HEIGHT}px;
-            padding: 0 64px;
-          `}
+          css={{
+            marginTop: Header.HEIGHT,
+            padding: '0 64px',
+          }}
           maxWidth="container.lg"
         >
           <Grid templateColumns="repeat(12, 1fr)">

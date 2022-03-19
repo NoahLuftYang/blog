@@ -1,7 +1,6 @@
 import { Layout } from '@app/components/Layout';
 import { StoriesQueryResponse } from '@app/story/__generated__/StoriesQuery.graphql';
 import { StoryList } from '@app/story/StoryList';
-import { css } from '@emotion/react';
 import { Container, Grid, GridItem } from '@stillmine/react-components';
 
 import { Header } from './Header';
@@ -15,10 +14,10 @@ export function HomePage({ stories }: Props) {
     <Layout>
       <Container
         as="main"
-        css={css`
-          margin-top: ${Header.HEIGHT}px;
-          padding: 32px 64px 100px;
-        `}
+        css={{
+          marginTop: Header.HEIGHT,
+          padding: '32px 64px 100px',
+        }}
         maxWidth="container.lg"
       >
         <Grid templateColumns="repeat(12, 1fr)">

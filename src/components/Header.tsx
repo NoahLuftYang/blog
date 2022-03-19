@@ -1,5 +1,4 @@
 import { position } from '@app/utils/position';
-import { css } from '@emotion/react';
 import { Container, Flex } from '@stillmine/react-components';
 import useWindowScroll from 'react-use/lib/useWindowScroll';
 
@@ -13,12 +12,12 @@ export function Header() {
       as="header"
       css={[
         position.fixed({ left: 0, right: 0, top: 0 }),
-        css`
-          background-color: ${y > 0 ? '#fff' : 'transparent'};
-          height: ${Header.HEIGHT}px;
-          padding: 0 16px;
-          transition: background-color 0.2s ease-in-out;
-        `,
+        {
+          backgroundColor: y > 0 ? '#fff' : 'transparent',
+          height: Header.HEIGHT,
+          padding: '0 16px',
+          transition: 'background-color 0.2s ease-in-out',
+        },
       ]}
     >
       <Flex align="center" as={Container} justify="space-between" maxWidth="container.lg">

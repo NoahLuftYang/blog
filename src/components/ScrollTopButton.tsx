@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { position } from '@app/utils/position';
 import useEvent from 'react-use/lib/useEvent';
 import useToggle from 'react-use/lib/useToggle';
 
@@ -19,11 +19,7 @@ export function ScrollTopButton() {
 
   return (
     <button
-      css={css`
-        bottom: 3rem;
-        position: fixed;
-        right: 3rem;
-      `}
+      css={position.fixed({ bottom: 24, right: 24 })}
       type="button"
       onClick={() => {
         scrollTo({ behavior: 'smooth', top: 0 });

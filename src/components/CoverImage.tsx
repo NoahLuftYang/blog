@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FC } from 'react';
 
 interface Props {
   slug?: string;
