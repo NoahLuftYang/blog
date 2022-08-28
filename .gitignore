@@ -150,3 +150,6 @@ dist
 
 public/*
 !public/favicon
+
+api
+build
