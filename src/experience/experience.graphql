@@ -1,0 +1,10 @@
+query getExperiences {
+  experiences {
+    companyName
+    jobTitle
+    description {
+      html
+      markdown
+    }
+  }
+}
