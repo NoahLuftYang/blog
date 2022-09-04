@@ -1,4 +1,4 @@
-import { graphqlSDK } from "@app/api/graphql";
+import { graphqlSDK } from "@app/apis/graphql";
 
 export async function getExperiences() {
   const result = await graphqlSDK.getExperiences();
