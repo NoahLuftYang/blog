@@ -1,7 +1,7 @@
 schema: https://api-ap-northeast-1.hygraph.com/v2/ckrim45km0vs701xnges74w2u/master
 documents: src/**/*.graphql
 generates:
-  src/api/generated.ts:
+  src/apis/generated.ts:
    plugins:
     - typescript
     - typescript-operations
