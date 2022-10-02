@@ -1,8 +1,8 @@
 import { getExperiences } from "@app/experience/experience.server";
-import { json } from "@remix-run/node";
+import { ExperienceList } from "@app/experience/ExperienceList";
 import { useLoaderData } from "@remix-run/react";
 
-export default function AboutPage() {
+export function AboutPage() {
   const { data: experiences } = useLoaderData<{
     data: Awaited<ReturnType<typeof getExperiences>>;
   }>();
@@ -24,25 +24,7 @@ export default function AboutPage() {
         </li>
       </ul>
       <h2>Work Experiences</h2>
-      {experiences.map(({ companyName, jobTitle, description }) => {
-        return (
-          <section key={companyName}>
-            <h1>{companyName}</h1>
-            <p>{jobTitle}</p>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: description,
-              }}
-            />
-          </section>
-        );
-      })}
+      <ExperienceList experiences={experiences} />
     </div>
   );
-}
-
-export async function loader() {
-  const experiences = await getExperiences();
-
-  return json({ data: experiences });
 }

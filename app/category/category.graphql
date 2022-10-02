@@ -1,0 +1,10 @@
+query getCategories {
+  categories {
+    id
+    ...Category
+  }
+}
+
+fragment Category on Category {
+  name
+}

@@ -1,0 +1,35 @@
+query getStories($where: StoryWhereInput) {
+  stories(
+    first: 10
+    orderBy: publishedAt_DESC
+    stage: PUBLISHED
+    where: $where
+  ) {
+    ...Story
+  }
+}
+
+query getStory($slug: String!) {
+  story(where: { slug: $slug }) {
+    ...Story
+    content
+    seo {
+      image {
+        url
+      }
+    }
+  }
+}
+
+fragment Story on Story {
+  slug
+  title
+  excerpt
+  publishedAt
+  coverImage {
+    url
+  }
+  category {
+    name
+  }
+}

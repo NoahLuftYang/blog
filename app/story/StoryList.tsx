@@ -1,11 +1,9 @@
-import { Anchor } from '@app/components/Anchor';
-import { Date } from '@app/components/Date';
-import { Text, VStack } from '@stillmine/react-components';
-
-import { StoriesQuery$data } from './__generated__/StoriesQuery.graphql';
+import { Anchor } from "@app/components/Anchor";
+import { Date } from "@app/components/Date";
+import { Text, VStack } from "@stillmine/react-components";
 
 interface Props {
-  stories: StoriesQuery$data['stories'];
+  stories: any;
 }
 
 export function StoryList({ stories }: Props) {
@@ -18,7 +16,7 @@ export function StoryList({ stories }: Props) {
       align="stretch"
       as="ul"
       css={{
-        listStyle: 'none',
+        listStyle: "none",
         margin: 0,
         padding: 0,
       }}
